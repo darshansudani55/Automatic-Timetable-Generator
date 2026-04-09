@@ -13,6 +13,7 @@ const {
   countFreeSlots,
   getTheoryTimeSlots,
   getLabTimeSlots,
+  slotsOverlap,
 } = require('./constraintChecker');
 const { WORKING_DAYS, generateTimeSlots } = require('../config/constants');
 
@@ -96,48 +97,69 @@ class GeneticAlgorithmScheduler {
 
   calcFitness(individual) {
     let score = 1000;
-    const seen = { faculty: new Map(), room: new Map(), lab: new Map(), class: new Map(), facultyHours: new Map() };
-    const freeSlotPenalties = {};
     const maxFacHoursPerDay = this.constraints.maxFacultyHoursPerDay || 6;
+    const facHours = new Map();
 
-    for (const a of individual) {
-      if (!a.startTime) { score -= 50; continue; }
-      
-      // Heavy penalty for unassigned rooms
-      if (a.type === 'Theory' && !a.classroomId) score -= 500;
-      if (a.type === 'Lab' && !a.labId) score -= 500;
+    individual.forEach((a, i) => {
+      if (!a.startTime) { score -= 50; return; }
+      if (a.type === 'Theory' && !a.classroomId) score -= 50;
+      if (a.type === 'Lab' && !a.labId) score -= 50;
 
-      const key = `${a.day}_${a.startTime}_${a.endTime}`;
       const durationHours = (Number(a.endTime.split(':')[0]) + Number(a.endTime.split(':')[1])/60) - (Number(a.startTime.split(':')[0]) + Number(a.startTime.split(':')[1])/60);
 
-      // Faculty conflict & workload
       if (a.facultyId) {
-        const fk = `${a.facultyId}_${key}`;
-        if (seen.faculty.has(fk)) score -= 100; else seen.faculty.set(fk, true);
-
         const fDayKey = `${a.facultyId}_${a.day}`;
-        const currentHours = seen.facultyHours.get(fDayKey) || 0;
-        seen.facultyHours.set(fDayKey, currentHours + durationHours);
+        const currentHours = facHours.get(fDayKey) || 0;
+        facHours.set(fDayKey, currentHours + durationHours);
         if (currentHours + durationHours > maxFacHoursPerDay) score -= 80;
       }
-      // Class double-booking
-      const ck = `${a.classId}_${key}`;
-      if (seen.class.has(ck)) score -= 100; else seen.class.set(ck, true);
-      // Classroom conflict
-      if (a.classroomId) {
-        const rk = `${a.classroomId}_${key}`;
-        if (seen.room.has(rk)) score -= 80; else seen.room.set(rk, true);
+
+      for (let j = 0; j < i; j++) {
+        const b = individual[j];
+        if (b.day !== a.day || !b.startTime) continue;
+        if (!slotsOverlap(a.startTime, a.endTime, b.startTime, b.endTime)) continue;
+
+        if (a.facultyId && a.facultyId === b.facultyId) score -= 100;
+        if (a.classId === b.classId) score -= 100;
+        if (a.classroomId && a.classroomId === b.classroomId) score -= 80;
+        if (a.labId && a.labId === b.labId) {
+          if (!a.labPart || !b.labPart || a.labPart === b.labPart) score -= 100;
+        }
       }
-      // Lab conflict
-      if (a.labId) {
-        const lk = a.labPart ? `${a.labId}_${a.labPart}_${key}` : `${a.labId}_${key}`;
-        if (seen.lab.has(lk)) score -= 100; else seen.lab.set(lk, true);
-      }
-      // Soft: free slot tracking
-      if (!freeSlotPenalties[a.classId]) freeSlotPenalties[a.classId] = {};
-      if (!freeSlotPenalties[a.classId][a.day]) freeSlotPenalties[a.classId][a.day] = [];
-      freeSlotPenalties[a.classId][a.day].push(a.startTime);
+    });
+
+    // Enforce No Free Slots Hard Constraint
+    const classSchedules = {};
+    for (const a of individual) {
+        if (!a.startTime) continue;
+        if (!classSchedules[a.classId]) classSchedules[a.classId] = {};
+        if (!classSchedules[a.classId][a.day]) classSchedules[a.classId][a.day] = [];
+        classSchedules[a.classId][a.day].push(a);
     }
+    
+    Object.values(classSchedules).forEach(days => {
+       Object.values(days).forEach(slots => {
+          slots.sort((x, y) => Number(x.startTime.replace(':','')) - Number(y.startTime.replace(':','')));
+          
+          if (slots.length > 0 && slots[0].startTime !== this.workingHours.startTime) {
+              score -= 150;
+          }
+
+          for (let k = 0; k < slots.length - 1; k++) {
+              const gapStart = slots[k].endTime;
+              const gapEnd = slots[k+1].startTime;
+              
+              if (gapStart !== gapEnd) {
+                  if (gapStart === this.workingHours.breakTime.start && gapEnd === this.workingHours.breakTime.end) {
+                     // exact break transition, no penalty
+                  } else {
+                     score -= 150; 
+                  }
+              }
+          }
+       });
+    });
+
     return Math.max(0, score);
   }
 
@@ -169,14 +191,17 @@ class GeneticAlgorithmScheduler {
 
   extractConflicts(genes) {
     const conflicts = [];
-    const seen = { faculty: new Map(), room: new Map(), lab: new Map(), class: new Map() };
-    for (const a of genes) {
-      if (!a.startTime) { conflicts.push({ type: 'faculty', severity: 'high', description: `No slot found for ${a.subjectCode} (${a.className})`, resolved: false }); continue; }
-      const key = `${a.day}_${a.startTime}_${a.endTime}`;
-      if (a.facultyId) {
-        const fk = `${a.facultyId}_${key}`;
-        if (seen.faculty.has(fk)) conflicts.push({ type: 'faculty', severity: 'high', description: `Faculty conflict: ${a.facultyId} at ${a.day} ${a.startTime}`, resolved: false });
-        else seen.faculty.set(fk, true);
+    for (let i = 0; i < genes.length; i++) {
+      const a = genes[i];
+      if (!a.startTime) { conflicts.push({ type: 'algorithm', severity: 'high', description: `No slot found for ${a.subjectCode} (${a.className})`, resolved: false }); continue; }
+      
+      for (let j = 0; j < i; j++) {
+        const b = genes[j];
+        if (b.day !== a.day || !b.startTime) continue;
+        if (!slotsOverlap(a.startTime, a.endTime, b.startTime, b.endTime)) continue;
+
+        if (a.facultyId && a.facultyId === b.facultyId) conflicts.push({ type: 'faculty', severity: 'high', description: `Faculty ${a.facultyId} double booked on ${a.day} at ${a.startTime}`, resolved: false });
+        if (a.classId === b.classId) conflicts.push({ type: 'algorithm', severity: 'high', description: `Class ${a.className} double booked on ${a.day} at ${a.startTime}`, resolved: false });
       }
     }
     return conflicts;

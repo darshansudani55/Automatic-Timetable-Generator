@@ -11,3 +11,90 @@
 {"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-09 00:06:58"}
 {"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-09 00:07:57"}
 {"level":"info","message":"Timetable generated: 69d6a0854f390b90f3f86f0a | fitness: 0","timestamp":"2026-04-09 00:07:57"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 00:05:07"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 00:05:07"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 00:05:07"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 00:05:07"}
+{"level":"info","message":"User logged in: admin@timetable.com","timestamp":"2026-04-10 00:06:35"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 00:14:36"}
+{"level":"info","message":"Timetable generated: 69d7f399cdd5a673143feda9 | fitness: 0","timestamp":"2026-04-10 00:14:43"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 00:29:32"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 00:29:32"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 00:29:32"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 00:29:32"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 00:32:05"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 00:32:05"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 00:32:05"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 00:32:05"}
+{"level":"info","message":"User logged in: admin@timetable.com","timestamp":"2026-04-10 00:33:58"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 00:34:23"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 1000","timestamp":"2026-04-10 00:34:23"}
+{"level":"info","message":"Timetable generated: 69d7f837d0d248d703fb8c22 | fitness: 1000","timestamp":"2026-04-10 00:34:23"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 01:01:08"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 1000","timestamp":"2026-04-10 01:01:08"}
+{"level":"info","message":"Timetable generated: 69d7fe7cd0d248d703fb8c52 | fitness: 1000","timestamp":"2026-04-10 01:01:08"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 01:05:03"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 1000","timestamp":"2026-04-10 01:05:03"}
+{"level":"info","message":"Timetable generated: 69d7ff67d0d248d703fb8c83 | fitness: 1000","timestamp":"2026-04-10 01:05:03"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 01:07:45"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 01:07:45"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 01:07:45"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 01:07:45"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 01:36:34"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 01:36:34"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 01:36:34"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 01:36:34"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 01:38:26"}
+{"ip":"::1","level":"error","message":"slotsOverlap is not defined","method":"POST","stack":"ReferenceError: slotsOverlap is not defined\n    at D:\\Timetable\\server\\src\\algorithms\\geneticAlgorithm.js:119:9\n    at Array.forEach (<anonymous>)\n    at GeneticAlgorithmScheduler.calcFitness (D:\\Timetable\\server\\src\\algorithms\\geneticAlgorithm.js:102:16)\n    at D:\\Timetable\\server\\src\\algorithms\\geneticAlgorithm.js:182:28\n    at Function.from (<anonymous>)\n    at GeneticAlgorithmScheduler.run (D:\\Timetable\\server\\src\\algorithms\\geneticAlgorithm.js:180:28)\n    at generateSchedule (D:\\Timetable\\server\\src\\services\\timetable.service.js:107:30)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.generate (D:\\Timetable\\server\\src\\controllers\\timetable.controller.js:19:46)","timestamp":"2026-04-10 01:38:26","url":"/api/timetable/generate"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 01:39:17"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 01:39:17"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 01:39:17"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 01:39:17"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 01:39:34"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 800","timestamp":"2026-04-10 01:39:34"}
+{"level":"info","message":"Timetable generated: 69d8077e167859f17a8e8a27 | fitness: 1000","timestamp":"2026-04-10 01:39:34"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 01:57:05"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 01:57:05"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 01:57:05"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 01:57:05"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 02:00:31"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 600","timestamp":"2026-04-10 02:00:31"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 850","timestamp":"2026-04-10 02:00:31"}
+{"level":"info","message":"Timetable generated: 69d80c67f574e5c60654c512 | fitness: 1000","timestamp":"2026-04-10 02:00:31"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 02:24:12"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 02:24:12"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 02:24:12"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 02:24:12"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 02:25:09"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 250","timestamp":"2026-04-10 02:25:09"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 750","timestamp":"2026-04-10 02:25:09"}
+{"level":"info","message":"Timetable generated: 69d8122deff9d09ef71c0a46 | fitness: 1000","timestamp":"2026-04-10 02:25:09"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 02:28:12"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 350","timestamp":"2026-04-10 02:28:12"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 850","timestamp":"2026-04-10 02:28:12"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 850","timestamp":"2026-04-10 02:28:12"}
+{"level":"info","message":"Timetable generated: 69d812e4eff9d09ef71c0a8c | fitness: 1000","timestamp":"2026-04-10 02:28:12"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 02:29:49"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 02:29:49"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 02:29:49"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 02:29:49"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 02:32:00"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 02:32:00"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 02:32:00"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 02:32:00"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 02:32:13"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 02:32:13"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 02:32:13"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 02:32:13"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 02:32:59"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 300","timestamp":"2026-04-10 02:32:59"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 850","timestamp":"2026-04-10 02:32:59"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 850","timestamp":"2026-04-10 02:32:59"}
+{"level":"info","message":"Timetable generated: 69d8140360855dc736ce2cb1 | fitness: 1000","timestamp":"2026-04-10 02:32:59"}
+{"level":"warn","message":"⚠️  MongoDB disconnected. Attempting to reconnect...","timestamp":"2026-04-10 03:12:51"}
+{"level":"info","message":"✅ MongoDB reconnected","timestamp":"2026-04-10 03:13:01"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 03:14:49"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 0","timestamp":"2026-04-10 03:14:49"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 700","timestamp":"2026-04-10 03:14:49"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 850","timestamp":"2026-04-10 03:14:49"}
+{"level":"info","message":"Timetable generated: 69d81dd160855dc736ce2cf6 | fitness: 1000","timestamp":"2026-04-10 03:14:49"}

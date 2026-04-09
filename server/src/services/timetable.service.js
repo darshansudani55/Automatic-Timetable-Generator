@@ -48,7 +48,7 @@ const buildScheduleFromAssignments = (assignments, workingHours) => {
           classroom: a.classroomId || null,
           lab: a.labId || null,
           labPart: a.labPart || null,
-          sessionType: a.sessionType === 'Lab' ? 'Lab' : 'Theory',
+          sessionType: (a.type || a.sessionType) === 'Lab' ? 'Lab' : 'Theory',
           isBreak: false,
           duration: calcDuration(a.startTime, a.endTime),
         });

@@ -21,6 +21,6 @@ const ClassSchema = new mongoose.Schema(
 );
 
 ClassSchema.index({ department: 1, semester: 1, academicYear: 1 });
-ClassSchema.index({ className: 1 });
+
 
 module.exports = mongoose.model('Class', ClassSchema);

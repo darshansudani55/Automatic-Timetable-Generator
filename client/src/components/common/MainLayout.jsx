@@ -13,20 +13,22 @@ export default function MainLayout() {
   const { sidebarOpen } = useSelector((s) => s.ui);
 
   return (
-    <Box sx={{ display: 'flex', minHeight: '100vh', bgcolor: 'background.default' }}>
+    <Box sx={{ display: 'flex', height: '100vh', overflow: 'hidden', bgcolor: 'background.default' }}>
       <Navbar drawerWidth={DRAWER_WIDTH} onMenuToggle={() => dispatch(toggleSidebar())} />
       <Sidebar drawerWidth={DRAWER_WIDTH} open={sidebarOpen} onClose={() => dispatch(toggleSidebar())} />
       <Box
         component="main"
         sx={{
           flexGrow: 1,
-          pt: '72px',
+          height: '100vh',
+          overflowY: 'auto',
+          overflowX: 'hidden',
+          pt: '88px',
           px: { xs: 2, sm: 3 },
           pb: 4,
           ml: { md: sidebarOpen ? `${DRAWER_WIDTH}px` : 0 },
           transition: 'margin 0.3s ease',
           maxWidth: '100%',
-          overflowX: 'hidden',
         }}
       >
         <Outlet />

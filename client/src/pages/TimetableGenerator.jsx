@@ -73,10 +73,23 @@ export default function TimetableGenerator() {
   };
 
   const canProceed = () => {
-    if (activeStep === 0) return config.academicYear && config.semester;
+    if (activeStep === 0) {
+      if (!config.academicYear || !config.semester) return false;
+      if (!config.workingHours.startTime || !config.workingHours.endTime || !config.workingHours.breakTime.start || !config.workingHours.breakTime.end) return false;
+      
+      const tStart = new Date(`1970-01-01T${config.workingHours.startTime}`);
+      const tEnd = new Date(`1970-01-01T${config.workingHours.endTime}`);
+      const bStart = new Date(`1970-01-01T${config.workingHours.breakTime.start}`);
+      const bEnd = new Date(`1970-01-01T${config.workingHours.breakTime.end}`);
+      
+      if (tStart >= tEnd || bStart >= bEnd) return false;
+      if (bStart <= tStart || bEnd >= tEnd) return false;
+      
+      return true;
+    }
     if (activeStep === 1) return selectedClasses.length > 0;
     return true;
-  };
+  }
 
   return (
     <Box>
@@ -134,6 +147,11 @@ export default function TimetableGenerator() {
                   </Select>
                 </FormControl>
               </Grid>
+              {!canProceed() && activeStep === 0 && (
+                <Grid item xs={12}>
+                   <Alert severity="error">Invalid times! Break must be between Start and End time, and Start must be before End.</Alert>
+                </Grid>
+              )}
             </Grid>
           </CardContent>
         </Card>

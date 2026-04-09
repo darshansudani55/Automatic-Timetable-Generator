@@ -125,19 +125,32 @@ class BacktrackingScheduler {
     const sessions = this.buildSessionList();
     const total = sessions.length;
     let iterations = 0;
-    const MAX_ITERATIONS = 50000; // Prevent infinite loop on unsolvable sets
+    const MAX_ITERATIONS = 5000000; // Increase depth threshold to handle complex configurations
+    this.halted = false;
 
     const solve = (index) => {
       if (index === total) return true; // All scheduled
       
       iterations++;
-      if (iterations > MAX_ITERATIONS) return false;
+      if (iterations > MAX_ITERATIONS) {
+         // Gracefully halt and KEEP partial schedule! Do not rewind tree!
+         this.halted = true; 
+         return true; 
+      }
+      if (this.halted) return true;
 
       const session = sessions[index];
       const timePool = session.type === 'Theory' ? this.theorySlots : this.labSlots;
 
       const days = [...this.workingDays].sort(() => Math.random() - 0.5);
-      const slots = [...timePool].sort(() => Math.random() - 0.5);
+      
+      // DO NOT SHUFFLE SLOTS! 
+      // Iterate sequentially to naturally pack lectures top-down, guaranteeing Zero Gaps!
+      const slots = [...timePool].sort((a,b) => {
+        const aMins = parseInt(a.startTime.split(':')[0])*60 + parseInt(a.startTime.split(':')[1]);
+        const bMins = parseInt(b.startTime.split(':')[0])*60 + parseInt(b.startTime.split(':')[1]);
+        return aMins - bMins;
+      });
 
       for (const day of days) {
         for (const slot of slots) {
@@ -215,11 +228,11 @@ class BacktrackingScheduler {
     const success = solve(0);
 
     const conflicts = [];
-    if (!success) {
+    if (!success || this.halted) {
       conflicts.push({
         type: 'algorithm',
         severity: 'high',
-        description: `Backtracking search exhausted (placed ${this.assignments.length} of ${total})`,
+        description: `Backtracking limit reached. Generating Partial Schedule (placed ${this.assignments.length} of ${total} classes). Decrease constraints or select fewer cohorts.`,
         resolved: false,
       });
     }

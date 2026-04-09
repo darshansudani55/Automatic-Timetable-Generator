@@ -57,7 +57,7 @@ async function seed() {
     console.log('👨‍🏫 Faculty created');
 
     // --- Subjects (CSE Sem 3) ---
-    const [ds, dbms, os, cn, python] = await Subject.insertMany([
+    const [ds, dbms, os, cn, python] = await Subject.create([
       { subjectCode: 'CS301', subjectName: 'Data Structures', department: cse._id, credits: 4, semester: 3 },
       { subjectCode: 'CS302', subjectName: 'Database Management Systems', department: cse._id, credits: 4, semester: 3 },
       { subjectCode: 'CS303', subjectName: 'Operating Systems', department: cse._id, credits: 3, semester: 3 },
@@ -66,7 +66,7 @@ async function seed() {
     ]);
 
     // CSE Sem 5 subjects
-    const [coa, ml, se, cd] = await Subject.insertMany([
+    const [coa, ml, se, cd] = await Subject.create([
       { subjectCode: 'CS501', subjectName: 'Computer Organization & Architecture', department: cse._id, credits: 4, semester: 5 },
       { subjectCode: 'CS502', subjectName: 'Machine Learning', department: cse._id, credits: 4, semester: 5 },
       { subjectCode: 'CS503', subjectName: 'Software Engineering', department: cse._id, credits: 3, semester: 5 },
