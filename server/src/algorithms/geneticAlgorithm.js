@@ -1,0 +1,224 @@
+/**
+ * Genetic Algorithm Scheduler
+ * Produces near-optimal conflict-free timetables via evolutionary optimization.
+ */
+const {
+  isFacultyFree,
+  isClassroomFree,
+  isLabFree,
+  isClassFree,
+  isFacultyNotUnavailable,
+  getFacultyScheduledHours,
+  getFacultyScheduledHoursPerDay,
+  countFreeSlots,
+  getTheoryTimeSlots,
+  getLabTimeSlots,
+} = require('./constraintChecker');
+const { WORKING_DAYS, generateTimeSlots } = require('../config/constants');
+
+class GeneticAlgorithmScheduler {
+  constructor(config) {
+    this.classes = config.classes;
+    this.classrooms = config.classrooms || [];
+    this.labs = config.labs || [];
+    this.workingDays = config.workingDays || WORKING_DAYS;
+    this.workingHours = config.workingHours;
+    this.constraints = config.constraints || {};
+    this.populationSize = Math.min(config.populationSize || 50, 80);
+    this.generations = Math.min(config.generations || 200, 300);
+    this.mutationRate = config.mutationRate || 0.15;
+    this.crossoverRate = config.crossoverRate || 0.7;
+    this.elitismRate = config.elitismRate || 0.15;
+
+    this.timeSlots = generateTimeSlots(
+      this.workingHours.startTime,
+      this.workingHours.endTime,
+      this.workingHours.breakTime.start,
+      this.workingHours.breakTime.end
+    );
+    this.theorySlots = getTheoryTimeSlots(this.timeSlots);
+    this.labSlots = getLabTimeSlots(this.timeSlots);
+  }
+
+  buildSessionList() {
+    const sessions = [];
+    for (const cls of this.classes) {
+      for (const sa of cls.subjects) {
+        const subject = sa.subject;
+        const theory = subject.sessionsPerWeek?.theory || 0;
+        const lab = subject.sessionsPerWeek?.lab || 0;
+        for (let i = 0; i < theory; i++) {
+          sessions.push({ classId: cls._id.toString(), className: cls.className, subjectId: subject._id.toString(), subjectCode: subject.subjectCode, subjectName: subject.subjectName, facultyId: sa.faculty?._id?.toString() || null, faculty: sa.faculty, type: 'Theory', studentCount: cls.studentCount });
+        }
+        for (let i = 0; i < lab; i++) {
+          const lf = sa.labFaculty || sa.faculty;
+          sessions.push({ classId: cls._id.toString(), className: cls.className, subjectId: subject._id.toString(), subjectCode: subject.subjectCode, subjectName: subject.subjectName, facultyId: lf?._id?.toString() || null, faculty: lf, type: 'Lab', studentCount: cls.studentCount });
+        }
+      }
+    }
+    return sessions;
+  }
+
+  randomSlot(type) {
+    const pool = type === 'Lab' ? this.labSlots : this.theorySlots;
+    return pool[Math.floor(Math.random() * pool.length)];
+  }
+
+  randomDay() { return this.workingDays[Math.floor(Math.random() * this.workingDays.length)]; }
+
+  randomClassroom(studentCount) {
+    const suitable = this.classrooms.filter((r) => r.isActive && r.capacity >= studentCount);
+    if (!suitable.length) return null;
+    return suitable[Math.floor(Math.random() * suitable.length)];
+  }
+
+  randomLab() {
+    const active = this.labs.filter((l) => l.isActive);
+    if (!active.length) return { lab: null, labPart: null };
+    const lab = active[Math.floor(Math.random() * active.length)];
+    let labPart = null;
+    if (lab.hasParts && lab.parts?.length) {
+      labPart = lab.parts[Math.floor(Math.random() * lab.parts.length)].partName;
+    }
+    return { lab, labPart };
+  }
+
+  createIndividual(sessions) {
+    return sessions.map((s) => {
+      const slot = this.randomSlot(s.type);
+      const day = this.randomDay();
+      let classroomId = null, labId = null, labPart = null;
+      if (s.type === 'Theory') { const r = this.randomClassroom(s.studentCount); if (r) classroomId = r._id.toString(); }
+      else { const { lab, labPart: lp } = this.randomLab(); if (lab) { labId = lab._id.toString(); labPart = lp; } }
+      return { ...s, day, startTime: slot?.startTime, endTime: slot?.endTime, classroomId, labId, labPart };
+    });
+  }
+
+  calcFitness(individual) {
+    let score = 1000;
+    const seen = { faculty: new Map(), room: new Map(), lab: new Map(), class: new Map(), facultyHours: new Map() };
+    const freeSlotPenalties = {};
+    const maxFacHoursPerDay = this.constraints.maxFacultyHoursPerDay || 6;
+
+    for (const a of individual) {
+      if (!a.startTime) { score -= 50; continue; }
+      
+      // Heavy penalty for unassigned rooms
+      if (a.type === 'Theory' && !a.classroomId) score -= 500;
+      if (a.type === 'Lab' && !a.labId) score -= 500;
+
+      const key = `${a.day}_${a.startTime}_${a.endTime}`;
+      const durationHours = (Number(a.endTime.split(':')[0]) + Number(a.endTime.split(':')[1])/60) - (Number(a.startTime.split(':')[0]) + Number(a.startTime.split(':')[1])/60);
+
+      // Faculty conflict & workload
+      if (a.facultyId) {
+        const fk = `${a.facultyId}_${key}`;
+        if (seen.faculty.has(fk)) score -= 100; else seen.faculty.set(fk, true);
+
+        const fDayKey = `${a.facultyId}_${a.day}`;
+        const currentHours = seen.facultyHours.get(fDayKey) || 0;
+        seen.facultyHours.set(fDayKey, currentHours + durationHours);
+        if (currentHours + durationHours > maxFacHoursPerDay) score -= 80;
+      }
+      // Class double-booking
+      const ck = `${a.classId}_${key}`;
+      if (seen.class.has(ck)) score -= 100; else seen.class.set(ck, true);
+      // Classroom conflict
+      if (a.classroomId) {
+        const rk = `${a.classroomId}_${key}`;
+        if (seen.room.has(rk)) score -= 80; else seen.room.set(rk, true);
+      }
+      // Lab conflict
+      if (a.labId) {
+        const lk = a.labPart ? `${a.labId}_${a.labPart}_${key}` : `${a.labId}_${key}`;
+        if (seen.lab.has(lk)) score -= 100; else seen.lab.set(lk, true);
+      }
+      // Soft: free slot tracking
+      if (!freeSlotPenalties[a.classId]) freeSlotPenalties[a.classId] = {};
+      if (!freeSlotPenalties[a.classId][a.day]) freeSlotPenalties[a.classId][a.day] = [];
+      freeSlotPenalties[a.classId][a.day].push(a.startTime);
+    }
+    return Math.max(0, score);
+  }
+
+  select(population) {
+    const size = Math.min(5, population.length);
+    const tournament = Array.from({ length: size }, () => population[Math.floor(Math.random() * population.length)]);
+    return tournament.sort((a, b) => b.fitness - a.fitness)[0].genes;
+  }
+
+  crossover(p1, p2) {
+    if (Math.random() > this.crossoverRate || p1.length < 2) return [p1, p2];
+    const pt = Math.floor(Math.random() * p1.length);
+    return [[...p1.slice(0, pt), ...p2.slice(pt)], [...p2.slice(0, pt), ...p1.slice(pt)]];
+  }
+
+  mutate(genes) {
+    return genes.map((g) => {
+      if (Math.random() > this.mutationRate) return g;
+      const slot = this.randomSlot(g.type);
+      const day = this.randomDay();
+      let classroomId = g.classroomId, labId = g.labId, labPart = g.labPart;
+      if (Math.random() < 0.4) {
+        if (g.type === 'Theory') { const r = this.randomClassroom(g.studentCount); if (r) classroomId = r._id.toString(); }
+        else { const { lab, labPart: lp } = this.randomLab(); if (lab) { labId = lab._id.toString(); labPart = lp; } }
+      }
+      return { ...g, day, startTime: slot?.startTime, endTime: slot?.endTime, classroomId, labId, labPart };
+    });
+  }
+
+  extractConflicts(genes) {
+    const conflicts = [];
+    const seen = { faculty: new Map(), room: new Map(), lab: new Map(), class: new Map() };
+    for (const a of genes) {
+      if (!a.startTime) { conflicts.push({ type: 'faculty', severity: 'high', description: `No slot found for ${a.subjectCode} (${a.className})`, resolved: false }); continue; }
+      const key = `${a.day}_${a.startTime}_${a.endTime}`;
+      if (a.facultyId) {
+        const fk = `${a.facultyId}_${key}`;
+        if (seen.faculty.has(fk)) conflicts.push({ type: 'faculty', severity: 'high', description: `Faculty conflict: ${a.facultyId} at ${a.day} ${a.startTime}`, resolved: false });
+        else seen.faculty.set(fk, true);
+      }
+    }
+    return conflicts;
+  }
+
+  async run(progressCallback) {
+    const sessions = this.buildSessionList();
+    if (!sessions.length) return { assignments: [], conflicts: [], fitness: 0 };
+
+    let population = Array.from({ length: this.populationSize }, () => {
+      const genes = this.createIndividual(sessions);
+      const fitness = this.calcFitness(genes);
+      return { genes, fitness };
+    });
+
+    population.sort((a, b) => b.fitness - a.fitness);
+    let best = population[0];
+
+    for (let gen = 0; gen < this.generations; gen++) {
+      const eliteCount = Math.max(1, Math.floor(this.populationSize * this.elitismRate));
+      const next = population.slice(0, eliteCount);
+
+      while (next.length < this.populationSize) {
+        const p1 = this.select(population);
+        const p2 = this.select(population);
+        const [c1, c2] = this.crossover(p1, p2);
+        const m1 = this.mutate(c1); const m2 = this.mutate(c2);
+        next.push({ genes: m1, fitness: this.calcFitness(m1) });
+        if (next.length < this.populationSize) next.push({ genes: m2, fitness: this.calcFitness(m2) });
+      }
+
+      population = next.sort((a, b) => b.fitness - a.fitness);
+      if (population[0].fitness > best.fitness) best = population[0];
+
+      if (progressCallback && gen % 10 === 0) {
+        progressCallback({ generation: gen + 1, totalGenerations: this.generations, bestFitness: best.fitness, avgFitness: population.reduce((s, i) => s + i.fitness, 0) / population.length });
+      }
+      if (best.fitness >= 995) break;
+    }
+
+    return { assignments: best.genes, conflicts: this.extractConflicts(best.genes), fitness: best.fitness };
+  }
+}
+
+module.exports = GeneticAlgorithmScheduler;

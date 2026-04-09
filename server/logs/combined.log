@@ -1,0 +1,13 @@
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-08 23:52:08"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-08 23:52:08"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-08 23:52:08"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-08 23:52:08"}
+{"level":"info","message":"User logged in: admin@timetable.com","timestamp":"2026-04-08 23:55:44"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-08 23:59:25"}
+{"level":"info","message":"Timetable generated: 69d69e85d54e7fbab980faca | fitness: 0","timestamp":"2026-04-08 23:59:25"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-09 00:06:58"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-09 00:06:58"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-09 00:06:58"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-09 00:06:58"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-09 00:07:57"}
+{"level":"info","message":"Timetable generated: 69d6a0854f390b90f3f86f0a | fitness: 0","timestamp":"2026-04-09 00:07:57"}
