@@ -16,10 +16,31 @@ import * as XLSX from 'xlsx';
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 const TYPE_COLORS = { Theory: { bg: '#DBEAFE', color: '#1D4ED8' }, Lab: { bg: '#D1FAE5', color: '#065F46' }, Tutorial: { bg: '#FEF3C7', color: '#92400E' }, Break: { bg: '#F3F4F6', color: '#6B7280' } };
 
-function TimetableGrid({ schedule = [], viewMode, selectedId, onSwap }) {
+function TimetableGrid({ schedule = [], viewMode, selectedId, onSwap, workingHours }) {
   if (!selectedId) return <Typography color="text.secondary" textAlign="center" py={4}>Select an entity to view its timetable</Typography>;
 
   const allSlots = new Map();
+
+  if (workingHours) {
+    const toMins = (t) => { const [h, m] = t.split(':'); return parseInt(h) * 60 + parseInt(m); };
+    const toTime = (mins) => `${String(Math.floor(mins / 60)).padStart(2, '0')}:${String(mins % 60).padStart(2, '0')}`;
+    let current = toMins(workingHours.startTime);
+    const end = toMins(workingHours.endTime);
+    const bStart = toMins(workingHours.breakTime?.start || '10:30');
+    const bEnd = toMins(workingHours.breakTime?.end || '11:00');
+
+    while (current < end) {
+      if (current === bStart) {
+        allSlots.set(toTime(current), { startTime: toTime(current), endTime: toTime(bEnd), isBreak: true });
+        current = bEnd;
+      } else {
+        const slotEnd = Math.min(current + 60, current < bStart ? bStart : end);
+        allSlots.set(toTime(current), { startTime: toTime(current), endTime: toTime(slotEnd), isBreak: false });
+        current = slotEnd;
+      }
+    }
+  }
+
   for (const classSched of schedule) {
     for (const ds of classSched.dayWiseSchedule) {
       for (const slot of ds.slots) {
@@ -77,9 +98,9 @@ function TimetableGrid({ schedule = [], viewMode, selectedId, onSwap }) {
   // Compute precise grid layout mapping to support accurate HTML rowSpans for Labs!
   const timeRows = [...allSlots.values()].sort((a, b) => a.startTime.localeCompare(b.startTime));
   
-  const gridData = timeRows.map(tr => ({
+  const gridData = timeRows.map((tr, idx) => ({
     startTime: tr.startTime,
-    endTime: tr.endTime,
+    logicalEndTime: idx < timeRows.length - 1 ? timeRows[idx + 1].startTime : tr.endTime,
     isBreak: tr.isBreak,
     cells: {}
   }));
@@ -122,7 +143,7 @@ function TimetableGrid({ schedule = [], viewMode, selectedId, onSwap }) {
             {gridData.map((row, rowIndex) => (
               <TableRow key={row.startTime}>
                 <TableCell sx={{ fontSize: '0.75rem', fontWeight: 600, color: 'text.secondary', bgcolor: '#FAFBFF', whiteSpace: 'nowrap' }}>
-                  {row.startTime}<br />{row.endTime}
+                  {row.startTime}<br />{row.logicalEndTime}
                 </TableCell>
                 {row.isBreak ? (
                   <TableCell colSpan={5} align="center" sx={{ bgcolor: '#F3F4F6', color: '#6B7280', fontWeight: 700, fontSize: '0.8rem' }}>☕ Break Time</TableCell>
@@ -389,7 +410,7 @@ export default function TimetableDetail() {
             {viewMode === 'Class' && timetable.status === 'draft' && <Chip label="Drag & Drop Enabled" size="small" sx={{ bgcolor: '#FFF3E0', color: '#E65100', fontWeight: 700, fontSize: '0.7rem' }} />}
           </Box>
 
-          <TimetableGrid schedule={timetable.schedule} viewMode={viewMode} selectedId={selectedId} onSwap={handleSwapSlot} />
+          <TimetableGrid schedule={timetable.schedule} viewMode={viewMode} selectedId={selectedId} onSwap={handleSwapSlot} workingHours={timetable.workingHours} />
         </CardContent>
       </Card>
     </Box>

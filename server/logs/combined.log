@@ -98,3 +98,638 @@
 {"level":"info","message":"Algorithm progress: 11/200 | fitness: 700","timestamp":"2026-04-10 03:14:49"}
 {"level":"info","message":"Algorithm progress: 21/200 | fitness: 850","timestamp":"2026-04-10 03:14:49"}
 {"level":"info","message":"Timetable generated: 69d81dd160855dc736ce2cf6 | fitness: 1000","timestamp":"2026-04-10 03:14:49"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 09:35:32"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 09:35:32"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 09:35:32"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 09:35:32"}
+{"level":"info","message":"User logged in: admin@timetable.com","timestamp":"2026-04-10 09:36:26"}
+{"level":"warn","message":"⚠️  MongoDB disconnected. Attempting to reconnect...","timestamp":"2026-04-10 10:39:59"}
+{"level":"info","message":"✅ MongoDB reconnected","timestamp":"2026-04-10 10:40:09"}
+{"level":"warn","message":"⚠️  MongoDB disconnected. Attempting to reconnect...","timestamp":"2026-04-10 10:58:39"}
+{"level":"info","message":"✅ MongoDB reconnected","timestamp":"2026-04-10 10:58:49"}
+{"level":"warn","message":"⚠️  MongoDB disconnected. Attempting to reconnect...","timestamp":"2026-04-10 11:02:29"}
+{"level":"info","message":"✅ MongoDB reconnected","timestamp":"2026-04-10 11:02:39"}
+{"level":"warn","message":"⚠️  MongoDB disconnected. Attempting to reconnect...","timestamp":"2026-04-10 11:23:32"}
+{"level":"info","message":"✅ MongoDB reconnected","timestamp":"2026-04-10 11:23:43"}
+{"ip":"::1","level":"error","message":"E11000 duplicate key error collection: timetable_db.classes index: className_1 dup key: { className: \"CSE-6EC4\" }","method":"POST","stack":"MongoServerError: E11000 duplicate key error collection: timetable_db.classes index: className_1 dup key: { className: \"CSE-6EC4\" }\n    at InsertOneOperation.handleOk (D:\\Timetable\\server\\node_modules\\mongodb\\lib\\operations\\insert.js:51:19)\n    at tryOperation (D:\\Timetable\\server\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:214:34)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async executeOperation (D:\\Timetable\\server\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:78:16)\n    at async Collection.insertOne (D:\\Timetable\\server\\node_modules\\mongodb\\lib\\collection.js:154:16)","timestamp":"2026-04-10 11:28:06","url":"/api/master/classes"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 11:33:23"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 0","timestamp":"2026-04-10 11:33:23"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 0","timestamp":"2026-04-10 11:33:23"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 0","timestamp":"2026-04-10 11:33:23"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 0","timestamp":"2026-04-10 11:33:24"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 0","timestamp":"2026-04-10 11:33:24"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 0","timestamp":"2026-04-10 11:33:24"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 0","timestamp":"2026-04-10 11:33:24"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 0","timestamp":"2026-04-10 11:33:24"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 0","timestamp":"2026-04-10 11:33:24"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 0","timestamp":"2026-04-10 11:33:24"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 0","timestamp":"2026-04-10 11:33:24"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 0","timestamp":"2026-04-10 11:33:25"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 0","timestamp":"2026-04-10 11:33:25"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 0","timestamp":"2026-04-10 11:33:25"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 0","timestamp":"2026-04-10 11:33:25"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 0","timestamp":"2026-04-10 11:33:25"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 0","timestamp":"2026-04-10 11:33:25"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 0","timestamp":"2026-04-10 11:33:25"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 0","timestamp":"2026-04-10 11:33:25"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 0","timestamp":"2026-04-10 11:33:25"}
+{"ip":"::1","level":"error","message":"Timetable validation failed: conflicts.1.type: `algorithm` is not a valid enum value for path `type`., conflicts.2.type: `algorithm` is not a valid enum value for path `type`., conflicts.3.type: `algorithm` is not a valid enum value for path `type`., conflicts.5.type: `algorithm` is not a valid enum value for path `type`., conflicts.6.type: `algorithm` is not a valid enum value for path `type`., conflicts.7.type: `algorithm` is not a valid enum value for path `type`., conflicts.8.type: `algorithm` is not a valid enum value for path `type`., conflicts.9.type: `algorithm` is not a valid enum value for path `type`., conflicts.10.type: `algorithm` is not a valid enum value for path `type`., conflicts.11.type: `algorithm` is not a valid enum value for path `type`., conflicts.12.type: `algorithm` is not a valid enum value for path `type`., conflicts.13.type: `algorithm` is not a valid enum value for path `type`., conflicts.14.type: `algorithm` is not a valid enum value for path `type`., conflicts.15.type: `algorithm` is not a valid enum value for path `type`., conflicts.16.type: `algorithm` is not a valid enum value for path `type`., conflicts.17.type: `algorithm` is not a valid enum value for path `type`., conflicts.18.type: `algorithm` is not a valid enum value for path `type`., conflicts.19.type: `algorithm` is not a valid enum value for path `type`., conflicts.20.type: `algorithm` is not a valid enum value for path `type`., conflicts.21.type: `algorithm` is not a valid enum value for path `type`., conflicts.22.type: `algorithm` is not a valid enum value for path `type`., conflicts.23.type: `algorithm` is not a valid enum value for path `type`., conflicts.24.type: `algorithm` is not a valid enum value for path `type`., conflicts.25.type: `algorithm` is not a valid enum value for path `type`., conflicts.26.type: `algorithm` is not a valid enum value for path `type`., conflicts.27.type: `algorithm` is not a valid enum value for path `type`., conflicts.28.type: `algorithm` is not a valid enum value for path `type`., conflicts.29.type: `algorithm` is not a valid enum value for path `type`.","method":"POST","stack":"ValidationError: Timetable validation failed: conflicts.1.type: `algorithm` is not a valid enum value for path `type`., conflicts.2.type: `algorithm` is not a valid enum value for path `type`., conflicts.3.type: `algorithm` is not a valid enum value for path `type`., conflicts.5.type: `algorithm` is not a valid enum value for path `type`., conflicts.6.type: `algorithm` is not a valid enum value for path `type`., conflicts.7.type: `algorithm` is not a valid enum value for path `type`., conflicts.8.type: `algorithm` is not a valid enum value for path `type`., conflicts.9.type: `algorithm` is not a valid enum value for path `type`., conflicts.10.type: `algorithm` is not a valid enum value for path `type`., conflicts.11.type: `algorithm` is not a valid enum value for path `type`., conflicts.12.type: `algorithm` is not a valid enum value for path `type`., conflicts.13.type: `algorithm` is not a valid enum value for path `type`., conflicts.14.type: `algorithm` is not a valid enum value for path `type`., conflicts.15.type: `algorithm` is not a valid enum value for path `type`., conflicts.16.type: `algorithm` is not a valid enum value for path `type`., conflicts.17.type: `algorithm` is not a valid enum value for path `type`., conflicts.18.type: `algorithm` is not a valid enum value for path `type`., conflicts.19.type: `algorithm` is not a valid enum value for path `type`., conflicts.20.type: `algorithm` is not a valid enum value for path `type`., conflicts.21.type: `algorithm` is not a valid enum value for path `type`., conflicts.22.type: `algorithm` is not a valid enum value for path `type`., conflicts.23.type: `algorithm` is not a valid enum value for path `type`., conflicts.24.type: `algorithm` is not a valid enum value for path `type`., conflicts.25.type: `algorithm` is not a valid enum value for path `type`., conflicts.26.type: `algorithm` is not a valid enum value for path `type`., conflicts.27.type: `algorithm` is not a valid enum value for path `type`., conflicts.28.type: `algorithm` is not a valid enum value for path `type`., conflicts.29.type: `algorithm` is not a valid enum value for path `type`.\n    at Document.invalidate (D:\\Timetable\\server\\node_modules\\mongoose\\lib\\document.js:3381:32)\n    at Subdocument.invalidate (D:\\Timetable\\server\\node_modules\\mongoose\\lib\\types\\subdocument.js:257:12)\n    at D:\\Timetable\\server\\node_modules\\mongoose\\lib\\document.js:3142:17\n    at D:\\Timetable\\server\\node_modules\\mongoose\\lib\\schemaType.js:1446:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2026-04-10 11:33:26","url":"/api/timetable/generate"}
+{"level":"info","message":"Generating timetable for 1 classes using backtracking","timestamp":"2026-04-10 12:12:27"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 12:23:35"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 12:23:35"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 12:23:35"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 12:23:35"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 12:23:54"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 0","timestamp":"2026-04-10 12:23:54"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 0","timestamp":"2026-04-10 12:23:54"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 0","timestamp":"2026-04-10 12:23:55"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 0","timestamp":"2026-04-10 12:23:55"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 0","timestamp":"2026-04-10 12:23:55"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 0","timestamp":"2026-04-10 12:23:55"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 0","timestamp":"2026-04-10 12:23:55"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 0","timestamp":"2026-04-10 12:23:55"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 0","timestamp":"2026-04-10 12:23:56"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 0","timestamp":"2026-04-10 12:23:56"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 0","timestamp":"2026-04-10 12:23:56"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 0","timestamp":"2026-04-10 12:23:56"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 0","timestamp":"2026-04-10 12:23:56"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 0","timestamp":"2026-04-10 12:23:56"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 0","timestamp":"2026-04-10 12:23:56"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 0","timestamp":"2026-04-10 12:23:56"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 0","timestamp":"2026-04-10 12:23:56"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 0","timestamp":"2026-04-10 12:23:57"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 0","timestamp":"2026-04-10 12:23:57"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 0","timestamp":"2026-04-10 12:23:57"}
+{"ip":"::1","level":"error","message":"Timetable validation failed: conflicts.0.type: `algorithm` is not a valid enum value for path `type`., conflicts.1.type: `algorithm` is not a valid enum value for path `type`., conflicts.2.type: `algorithm` is not a valid enum value for path `type`., conflicts.3.type: `algorithm` is not a valid enum value for path `type`., conflicts.4.type: `algorithm` is not a valid enum value for path `type`., conflicts.6.type: `algorithm` is not a valid enum value for path `type`., conflicts.7.type: `algorithm` is not a valid enum value for path `type`., conflicts.8.type: `algorithm` is not a valid enum value for path `type`., conflicts.9.type: `algorithm` is not a valid enum value for path `type`., conflicts.11.type: `algorithm` is not a valid enum value for path `type`., conflicts.13.type: `algorithm` is not a valid enum value for path `type`., conflicts.14.type: `algorithm` is not a valid enum value for path `type`., conflicts.15.type: `algorithm` is not a valid enum value for path `type`., conflicts.16.type: `algorithm` is not a valid enum value for path `type`., conflicts.17.type: `algorithm` is not a valid enum value for path `type`., conflicts.18.type: `algorithm` is not a valid enum value for path `type`., conflicts.19.type: `algorithm` is not a valid enum value for path `type`., conflicts.20.type: `algorithm` is not a valid enum value for path `type`., conflicts.21.type: `algorithm` is not a valid enum value for path `type`., conflicts.22.type: `algorithm` is not a valid enum value for path `type`., conflicts.23.type: `algorithm` is not a valid enum value for path `type`., conflicts.24.type: `algorithm` is not a valid enum value for path `type`., conflicts.25.type: `algorithm` is not a valid enum value for path `type`., conflicts.26.type: `algorithm` is not a valid enum value for path `type`., conflicts.27.type: `algorithm` is not a valid enum value for path `type`., conflicts.28.type: `algorithm` is not a valid enum value for path `type`., conflicts.29.type: `algorithm` is not a valid enum value for path `type`.","method":"POST","stack":"ValidationError: Timetable validation failed: conflicts.0.type: `algorithm` is not a valid enum value for path `type`., conflicts.1.type: `algorithm` is not a valid enum value for path `type`., conflicts.2.type: `algorithm` is not a valid enum value for path `type`., conflicts.3.type: `algorithm` is not a valid enum value for path `type`., conflicts.4.type: `algorithm` is not a valid enum value for path `type`., conflicts.6.type: `algorithm` is not a valid enum value for path `type`., conflicts.7.type: `algorithm` is not a valid enum value for path `type`., conflicts.8.type: `algorithm` is not a valid enum value for path `type`., conflicts.9.type: `algorithm` is not a valid enum value for path `type`., conflicts.11.type: `algorithm` is not a valid enum value for path `type`., conflicts.13.type: `algorithm` is not a valid enum value for path `type`., conflicts.14.type: `algorithm` is not a valid enum value for path `type`., conflicts.15.type: `algorithm` is not a valid enum value for path `type`., conflicts.16.type: `algorithm` is not a valid enum value for path `type`., conflicts.17.type: `algorithm` is not a valid enum value for path `type`., conflicts.18.type: `algorithm` is not a valid enum value for path `type`., conflicts.19.type: `algorithm` is not a valid enum value for path `type`., conflicts.20.type: `algorithm` is not a valid enum value for path `type`., conflicts.21.type: `algorithm` is not a valid enum value for path `type`., conflicts.22.type: `algorithm` is not a valid enum value for path `type`., conflicts.23.type: `algorithm` is not a valid enum value for path `type`., conflicts.24.type: `algorithm` is not a valid enum value for path `type`., conflicts.25.type: `algorithm` is not a valid enum value for path `type`., conflicts.26.type: `algorithm` is not a valid enum value for path `type`., conflicts.27.type: `algorithm` is not a valid enum value for path `type`., conflicts.28.type: `algorithm` is not a valid enum value for path `type`., conflicts.29.type: `algorithm` is not a valid enum value for path `type`.\n    at Document.invalidate (D:\\Timetable\\server\\node_modules\\mongoose\\lib\\document.js:3381:32)\n    at Subdocument.invalidate (D:\\Timetable\\server\\node_modules\\mongoose\\lib\\types\\subdocument.js:257:12)\n    at D:\\Timetable\\server\\node_modules\\mongoose\\lib\\document.js:3142:17\n    at D:\\Timetable\\server\\node_modules\\mongoose\\lib\\schemaType.js:1446:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2026-04-10 12:23:57","url":"/api/timetable/generate"}
+{"level":"info","message":"Generating timetable for 1 classes using backtracking","timestamp":"2026-04-10 12:24:18"}
+{"level":"info","message":"Algorithm progress: 100/5000000 | fitness: 642.8571428571429","timestamp":"2026-04-10 12:24:18"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 14:25:11"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 14:25:11"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 14:25:11"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 14:25:11"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 14:30:35"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 0","timestamp":"2026-04-10 14:30:35"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 0","timestamp":"2026-04-10 14:30:35"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 0","timestamp":"2026-04-10 14:30:35"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 0","timestamp":"2026-04-10 14:30:35"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 0","timestamp":"2026-04-10 14:30:35"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 0","timestamp":"2026-04-10 14:30:35"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 0","timestamp":"2026-04-10 14:30:36"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 0","timestamp":"2026-04-10 14:30:36"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 0","timestamp":"2026-04-10 14:30:36"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 0","timestamp":"2026-04-10 14:30:36"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 0","timestamp":"2026-04-10 14:30:36"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 0","timestamp":"2026-04-10 14:30:36"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 0","timestamp":"2026-04-10 14:30:36"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 0","timestamp":"2026-04-10 14:30:37"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 0","timestamp":"2026-04-10 14:30:37"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 0","timestamp":"2026-04-10 14:30:37"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 0","timestamp":"2026-04-10 14:30:37"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 0","timestamp":"2026-04-10 14:30:37"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 0","timestamp":"2026-04-10 14:30:37"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 0","timestamp":"2026-04-10 14:30:37"}
+{"ip":"::1","level":"error","message":"Timetable validation failed: conflicts.0.type: `algorithm` is not a valid enum value for path `type`., conflicts.1.type: `algorithm` is not a valid enum value for path `type`., conflicts.2.type: `algorithm` is not a valid enum value for path `type`., conflicts.3.type: `algorithm` is not a valid enum value for path `type`., conflicts.4.type: `algorithm` is not a valid enum value for path `type`., conflicts.5.type: `algorithm` is not a valid enum value for path `type`., conflicts.6.type: `algorithm` is not a valid enum value for path `type`., conflicts.7.type: `algorithm` is not a valid enum value for path `type`., conflicts.8.type: `algorithm` is not a valid enum value for path `type`., conflicts.9.type: `algorithm` is not a valid enum value for path `type`., conflicts.10.type: `algorithm` is not a valid enum value for path `type`., conflicts.11.type: `algorithm` is not a valid enum value for path `type`., conflicts.12.type: `algorithm` is not a valid enum value for path `type`., conflicts.13.type: `algorithm` is not a valid enum value for path `type`., conflicts.14.type: `algorithm` is not a valid enum value for path `type`., conflicts.16.type: `algorithm` is not a valid enum value for path `type`., conflicts.17.type: `algorithm` is not a valid enum value for path `type`., conflicts.18.type: `algorithm` is not a valid enum value for path `type`., conflicts.19.type: `algorithm` is not a valid enum value for path `type`.","method":"POST","stack":"ValidationError: Timetable validation failed: conflicts.0.type: `algorithm` is not a valid enum value for path `type`., conflicts.1.type: `algorithm` is not a valid enum value for path `type`., conflicts.2.type: `algorithm` is not a valid enum value for path `type`., conflicts.3.type: `algorithm` is not a valid enum value for path `type`., conflicts.4.type: `algorithm` is not a valid enum value for path `type`., conflicts.5.type: `algorithm` is not a valid enum value for path `type`., conflicts.6.type: `algorithm` is not a valid enum value for path `type`., conflicts.7.type: `algorithm` is not a valid enum value for path `type`., conflicts.8.type: `algorithm` is not a valid enum value for path `type`., conflicts.9.type: `algorithm` is not a valid enum value for path `type`., conflicts.10.type: `algorithm` is not a valid enum value for path `type`., conflicts.11.type: `algorithm` is not a valid enum value for path `type`., conflicts.12.type: `algorithm` is not a valid enum value for path `type`., conflicts.13.type: `algorithm` is not a valid enum value for path `type`., conflicts.14.type: `algorithm` is not a valid enum value for path `type`., conflicts.16.type: `algorithm` is not a valid enum value for path `type`., conflicts.17.type: `algorithm` is not a valid enum value for path `type`., conflicts.18.type: `algorithm` is not a valid enum value for path `type`., conflicts.19.type: `algorithm` is not a valid enum value for path `type`.\n    at Document.invalidate (D:\\Timetable\\server\\node_modules\\mongoose\\lib\\document.js:3381:32)\n    at Subdocument.invalidate (D:\\Timetable\\server\\node_modules\\mongoose\\lib\\types\\subdocument.js:257:12)\n    at D:\\Timetable\\server\\node_modules\\mongoose\\lib\\document.js:3142:17\n    at D:\\Timetable\\server\\node_modules\\mongoose\\lib\\schemaType.js:1446:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2026-04-10 14:30:37","url":"/api/timetable/generate"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 14:30:47"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 0","timestamp":"2026-04-10 14:30:47"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 0","timestamp":"2026-04-10 14:30:47"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 0","timestamp":"2026-04-10 14:30:47"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 0","timestamp":"2026-04-10 14:30:47"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 0","timestamp":"2026-04-10 14:30:47"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 0","timestamp":"2026-04-10 14:30:47"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 0","timestamp":"2026-04-10 14:30:48"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 0","timestamp":"2026-04-10 14:30:48"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 0","timestamp":"2026-04-10 14:30:48"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 0","timestamp":"2026-04-10 14:30:48"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 0","timestamp":"2026-04-10 14:30:48"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 0","timestamp":"2026-04-10 14:30:49"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 0","timestamp":"2026-04-10 14:30:49"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 0","timestamp":"2026-04-10 14:30:49"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 0","timestamp":"2026-04-10 14:30:49"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 0","timestamp":"2026-04-10 14:30:49"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 0","timestamp":"2026-04-10 14:30:50"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 0","timestamp":"2026-04-10 14:30:50"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 0","timestamp":"2026-04-10 14:30:50"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 0","timestamp":"2026-04-10 14:30:50"}
+{"ip":"::1","level":"error","message":"Timetable validation failed: conflicts.1.type: `algorithm` is not a valid enum value for path `type`., conflicts.2.type: `algorithm` is not a valid enum value for path `type`., conflicts.3.type: `algorithm` is not a valid enum value for path `type`., conflicts.4.type: `algorithm` is not a valid enum value for path `type`., conflicts.5.type: `algorithm` is not a valid enum value for path `type`., conflicts.6.type: `algorithm` is not a valid enum value for path `type`., conflicts.7.type: `algorithm` is not a valid enum value for path `type`., conflicts.8.type: `algorithm` is not a valid enum value for path `type`., conflicts.9.type: `algorithm` is not a valid enum value for path `type`., conflicts.10.type: `algorithm` is not a valid enum value for path `type`., conflicts.11.type: `algorithm` is not a valid enum value for path `type`., conflicts.12.type: `algorithm` is not a valid enum value for path `type`., conflicts.13.type: `algorithm` is not a valid enum value for path `type`., conflicts.14.type: `algorithm` is not a valid enum value for path `type`., conflicts.15.type: `algorithm` is not a valid enum value for path `type`., conflicts.16.type: `algorithm` is not a valid enum value for path `type`., conflicts.17.type: `algorithm` is not a valid enum value for path `type`., conflicts.19.type: `algorithm` is not a valid enum value for path `type`., conflicts.20.type: `algorithm` is not a valid enum value for path `type`., conflicts.21.type: `algorithm` is not a valid enum value for path `type`., conflicts.22.type: `algorithm` is not a valid enum value for path `type`., conflicts.23.type: `algorithm` is not a valid enum value for path `type`., conflicts.25.type: `algorithm` is not a valid enum value for path `type`., conflicts.27.type: `algorithm` is not a valid enum value for path `type`.","method":"POST","stack":"ValidationError: Timetable validation failed: conflicts.1.type: `algorithm` is not a valid enum value for path `type`., conflicts.2.type: `algorithm` is not a valid enum value for path `type`., conflicts.3.type: `algorithm` is not a valid enum value for path `type`., conflicts.4.type: `algorithm` is not a valid enum value for path `type`., conflicts.5.type: `algorithm` is not a valid enum value for path `type`., conflicts.6.type: `algorithm` is not a valid enum value for path `type`., conflicts.7.type: `algorithm` is not a valid enum value for path `type`., conflicts.8.type: `algorithm` is not a valid enum value for path `type`., conflicts.9.type: `algorithm` is not a valid enum value for path `type`., conflicts.10.type: `algorithm` is not a valid enum value for path `type`., conflicts.11.type: `algorithm` is not a valid enum value for path `type`., conflicts.12.type: `algorithm` is not a valid enum value for path `type`., conflicts.13.type: `algorithm` is not a valid enum value for path `type`., conflicts.14.type: `algorithm` is not a valid enum value for path `type`., conflicts.15.type: `algorithm` is not a valid enum value for path `type`., conflicts.16.type: `algorithm` is not a valid enum value for path `type`., conflicts.17.type: `algorithm` is not a valid enum value for path `type`., conflicts.19.type: `algorithm` is not a valid enum value for path `type`., conflicts.20.type: `algorithm` is not a valid enum value for path `type`., conflicts.21.type: `algorithm` is not a valid enum value for path `type`., conflicts.22.type: `algorithm` is not a valid enum value for path `type`., conflicts.23.type: `algorithm` is not a valid enum value for path `type`., conflicts.25.type: `algorithm` is not a valid enum value for path `type`., conflicts.27.type: `algorithm` is not a valid enum value for path `type`.\n    at Document.invalidate (D:\\Timetable\\server\\node_modules\\mongoose\\lib\\document.js:3381:32)\n    at Subdocument.invalidate (D:\\Timetable\\server\\node_modules\\mongoose\\lib\\types\\subdocument.js:257:12)\n    at D:\\Timetable\\server\\node_modules\\mongoose\\lib\\document.js:3142:17\n    at D:\\Timetable\\server\\node_modules\\mongoose\\lib\\schemaType.js:1446:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2026-04-10 14:30:50","url":"/api/timetable/generate"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 14:30:57"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 0","timestamp":"2026-04-10 14:30:57"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 0","timestamp":"2026-04-10 14:30:58"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 0","timestamp":"2026-04-10 14:30:58"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 0","timestamp":"2026-04-10 14:30:58"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 0","timestamp":"2026-04-10 14:30:59"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 0","timestamp":"2026-04-10 14:30:59"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 0","timestamp":"2026-04-10 14:30:59"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 0","timestamp":"2026-04-10 14:30:59"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 0","timestamp":"2026-04-10 14:31:00"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 0","timestamp":"2026-04-10 14:31:00"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 0","timestamp":"2026-04-10 14:31:00"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 0","timestamp":"2026-04-10 14:31:01"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 0","timestamp":"2026-04-10 14:31:01"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 0","timestamp":"2026-04-10 14:31:01"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 0","timestamp":"2026-04-10 14:31:01"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 0","timestamp":"2026-04-10 14:31:01"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 0","timestamp":"2026-04-10 14:31:02"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 0","timestamp":"2026-04-10 14:31:02"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 0","timestamp":"2026-04-10 14:31:02"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 0","timestamp":"2026-04-10 14:31:02"}
+{"ip":"::1","level":"error","message":"Timetable validation failed: conflicts.0.type: `algorithm` is not a valid enum value for path `type`., conflicts.1.type: `algorithm` is not a valid enum value for path `type`., conflicts.2.type: `algorithm` is not a valid enum value for path `type`., conflicts.3.type: `algorithm` is not a valid enum value for path `type`., conflicts.4.type: `algorithm` is not a valid enum value for path `type`., conflicts.5.type: `algorithm` is not a valid enum value for path `type`., conflicts.6.type: `algorithm` is not a valid enum value for path `type`., conflicts.8.type: `algorithm` is not a valid enum value for path `type`., conflicts.9.type: `algorithm` is not a valid enum value for path `type`., conflicts.10.type: `algorithm` is not a valid enum value for path `type`., conflicts.11.type: `algorithm` is not a valid enum value for path `type`., conflicts.12.type: `algorithm` is not a valid enum value for path `type`., conflicts.13.type: `algorithm` is not a valid enum value for path `type`., conflicts.14.type: `algorithm` is not a valid enum value for path `type`., conflicts.15.type: `algorithm` is not a valid enum value for path `type`., conflicts.16.type: `algorithm` is not a valid enum value for path `type`.","method":"POST","stack":"ValidationError: Timetable validation failed: conflicts.0.type: `algorithm` is not a valid enum value for path `type`., conflicts.1.type: `algorithm` is not a valid enum value for path `type`., conflicts.2.type: `algorithm` is not a valid enum value for path `type`., conflicts.3.type: `algorithm` is not a valid enum value for path `type`., conflicts.4.type: `algorithm` is not a valid enum value for path `type`., conflicts.5.type: `algorithm` is not a valid enum value for path `type`., conflicts.6.type: `algorithm` is not a valid enum value for path `type`., conflicts.8.type: `algorithm` is not a valid enum value for path `type`., conflicts.9.type: `algorithm` is not a valid enum value for path `type`., conflicts.10.type: `algorithm` is not a valid enum value for path `type`., conflicts.11.type: `algorithm` is not a valid enum value for path `type`., conflicts.12.type: `algorithm` is not a valid enum value for path `type`., conflicts.13.type: `algorithm` is not a valid enum value for path `type`., conflicts.14.type: `algorithm` is not a valid enum value for path `type`., conflicts.15.type: `algorithm` is not a valid enum value for path `type`., conflicts.16.type: `algorithm` is not a valid enum value for path `type`.\n    at Document.invalidate (D:\\Timetable\\server\\node_modules\\mongoose\\lib\\document.js:3381:32)\n    at Subdocument.invalidate (D:\\Timetable\\server\\node_modules\\mongoose\\lib\\types\\subdocument.js:257:12)\n    at D:\\Timetable\\server\\node_modules\\mongoose\\lib\\document.js:3142:17\n    at D:\\Timetable\\server\\node_modules\\mongoose\\lib\\schemaType.js:1446:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2026-04-10 14:31:02","url":"/api/timetable/generate"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 14:31:09"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 0","timestamp":"2026-04-10 14:31:09"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 0","timestamp":"2026-04-10 14:31:09"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 0","timestamp":"2026-04-10 14:31:10"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 0","timestamp":"2026-04-10 14:31:10"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 0","timestamp":"2026-04-10 14:31:10"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 0","timestamp":"2026-04-10 14:31:10"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 0","timestamp":"2026-04-10 14:31:10"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 0","timestamp":"2026-04-10 14:31:10"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 0","timestamp":"2026-04-10 14:31:10"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 0","timestamp":"2026-04-10 14:31:11"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 0","timestamp":"2026-04-10 14:31:11"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 0","timestamp":"2026-04-10 14:31:11"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 0","timestamp":"2026-04-10 14:31:11"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 0","timestamp":"2026-04-10 14:31:11"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 0","timestamp":"2026-04-10 14:31:12"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 0","timestamp":"2026-04-10 14:31:12"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 0","timestamp":"2026-04-10 14:31:12"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 0","timestamp":"2026-04-10 14:31:12"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 0","timestamp":"2026-04-10 14:31:12"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 0","timestamp":"2026-04-10 14:31:12"}
+{"ip":"::1","level":"error","message":"Timetable validation failed: conflicts.1.type: `algorithm` is not a valid enum value for path `type`., conflicts.2.type: `algorithm` is not a valid enum value for path `type`., conflicts.3.type: `algorithm` is not a valid enum value for path `type`., conflicts.4.type: `algorithm` is not a valid enum value for path `type`., conflicts.5.type: `algorithm` is not a valid enum value for path `type`., conflicts.6.type: `algorithm` is not a valid enum value for path `type`., conflicts.7.type: `algorithm` is not a valid enum value for path `type`., conflicts.8.type: `algorithm` is not a valid enum value for path `type`., conflicts.9.type: `algorithm` is not a valid enum value for path `type`., conflicts.10.type: `algorithm` is not a valid enum value for path `type`., conflicts.11.type: `algorithm` is not a valid enum value for path `type`., conflicts.12.type: `algorithm` is not a valid enum value for path `type`., conflicts.13.type: `algorithm` is not a valid enum value for path `type`., conflicts.14.type: `algorithm` is not a valid enum value for path `type`., conflicts.15.type: `algorithm` is not a valid enum value for path `type`., conflicts.16.type: `algorithm` is not a valid enum value for path `type`., conflicts.17.type: `algorithm` is not a valid enum value for path `type`., conflicts.18.type: `algorithm` is not a valid enum value for path `type`., conflicts.19.type: `algorithm` is not a valid enum value for path `type`.","method":"POST","stack":"ValidationError: Timetable validation failed: conflicts.1.type: `algorithm` is not a valid enum value for path `type`., conflicts.2.type: `algorithm` is not a valid enum value for path `type`., conflicts.3.type: `algorithm` is not a valid enum value for path `type`., conflicts.4.type: `algorithm` is not a valid enum value for path `type`., conflicts.5.type: `algorithm` is not a valid enum value for path `type`., conflicts.6.type: `algorithm` is not a valid enum value for path `type`., conflicts.7.type: `algorithm` is not a valid enum value for path `type`., conflicts.8.type: `algorithm` is not a valid enum value for path `type`., conflicts.9.type: `algorithm` is not a valid enum value for path `type`., conflicts.10.type: `algorithm` is not a valid enum value for path `type`., conflicts.11.type: `algorithm` is not a valid enum value for path `type`., conflicts.12.type: `algorithm` is not a valid enum value for path `type`., conflicts.13.type: `algorithm` is not a valid enum value for path `type`., conflicts.14.type: `algorithm` is not a valid enum value for path `type`., conflicts.15.type: `algorithm` is not a valid enum value for path `type`., conflicts.16.type: `algorithm` is not a valid enum value for path `type`., conflicts.17.type: `algorithm` is not a valid enum value for path `type`., conflicts.18.type: `algorithm` is not a valid enum value for path `type`., conflicts.19.type: `algorithm` is not a valid enum value for path `type`.\n    at Document.invalidate (D:\\Timetable\\server\\node_modules\\mongoose\\lib\\document.js:3381:32)\n    at Subdocument.invalidate (D:\\Timetable\\server\\node_modules\\mongoose\\lib\\types\\subdocument.js:257:12)\n    at D:\\Timetable\\server\\node_modules\\mongoose\\lib\\document.js:3142:17\n    at D:\\Timetable\\server\\node_modules\\mongoose\\lib\\schemaType.js:1446:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2026-04-10 14:31:12","url":"/api/timetable/generate"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 14:31:20"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 0","timestamp":"2026-04-10 14:31:20"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 0","timestamp":"2026-04-10 14:31:20"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 0","timestamp":"2026-04-10 14:31:20"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 0","timestamp":"2026-04-10 14:31:21"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 0","timestamp":"2026-04-10 14:31:21"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 0","timestamp":"2026-04-10 14:31:21"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 0","timestamp":"2026-04-10 14:31:21"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 0","timestamp":"2026-04-10 14:31:21"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 0","timestamp":"2026-04-10 14:31:21"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 0","timestamp":"2026-04-10 14:31:21"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 0","timestamp":"2026-04-10 14:31:22"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 0","timestamp":"2026-04-10 14:31:22"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 0","timestamp":"2026-04-10 14:31:22"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 0","timestamp":"2026-04-10 14:31:22"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 0","timestamp":"2026-04-10 14:31:22"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 0","timestamp":"2026-04-10 14:31:22"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 0","timestamp":"2026-04-10 14:31:22"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 0","timestamp":"2026-04-10 14:31:23"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 0","timestamp":"2026-04-10 14:31:23"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 0","timestamp":"2026-04-10 14:31:23"}
+{"ip":"::1","level":"error","message":"Timetable validation failed: conflicts.0.type: `algorithm` is not a valid enum value for path `type`., conflicts.1.type: `algorithm` is not a valid enum value for path `type`., conflicts.2.type: `algorithm` is not a valid enum value for path `type`., conflicts.3.type: `algorithm` is not a valid enum value for path `type`., conflicts.5.type: `algorithm` is not a valid enum value for path `type`., conflicts.6.type: `algorithm` is not a valid enum value for path `type`., conflicts.7.type: `algorithm` is not a valid enum value for path `type`., conflicts.8.type: `algorithm` is not a valid enum value for path `type`., conflicts.9.type: `algorithm` is not a valid enum value for path `type`., conflicts.10.type: `algorithm` is not a valid enum value for path `type`., conflicts.11.type: `algorithm` is not a valid enum value for path `type`., conflicts.12.type: `algorithm` is not a valid enum value for path `type`., conflicts.13.type: `algorithm` is not a valid enum value for path `type`., conflicts.14.type: `algorithm` is not a valid enum value for path `type`., conflicts.15.type: `algorithm` is not a valid enum value for path `type`., conflicts.16.type: `algorithm` is not a valid enum value for path `type`., conflicts.17.type: `algorithm` is not a valid enum value for path `type`., conflicts.18.type: `algorithm` is not a valid enum value for path `type`., conflicts.19.type: `algorithm` is not a valid enum value for path `type`., conflicts.20.type: `algorithm` is not a valid enum value for path `type`., conflicts.22.type: `algorithm` is not a valid enum value for path `type`., conflicts.23.type: `algorithm` is not a valid enum value for path `type`., conflicts.24.type: `algorithm` is not a valid enum value for path `type`.","method":"POST","stack":"ValidationError: Timetable validation failed: conflicts.0.type: `algorithm` is not a valid enum value for path `type`., conflicts.1.type: `algorithm` is not a valid enum value for path `type`., conflicts.2.type: `algorithm` is not a valid enum value for path `type`., conflicts.3.type: `algorithm` is not a valid enum value for path `type`., conflicts.5.type: `algorithm` is not a valid enum value for path `type`., conflicts.6.type: `algorithm` is not a valid enum value for path `type`., conflicts.7.type: `algorithm` is not a valid enum value for path `type`., conflicts.8.type: `algorithm` is not a valid enum value for path `type`., conflicts.9.type: `algorithm` is not a valid enum value for path `type`., conflicts.10.type: `algorithm` is not a valid enum value for path `type`., conflicts.11.type: `algorithm` is not a valid enum value for path `type`., conflicts.12.type: `algorithm` is not a valid enum value for path `type`., conflicts.13.type: `algorithm` is not a valid enum value for path `type`., conflicts.14.type: `algorithm` is not a valid enum value for path `type`., conflicts.15.type: `algorithm` is not a valid enum value for path `type`., conflicts.16.type: `algorithm` is not a valid enum value for path `type`., conflicts.17.type: `algorithm` is not a valid enum value for path `type`., conflicts.18.type: `algorithm` is not a valid enum value for path `type`., conflicts.19.type: `algorithm` is not a valid enum value for path `type`., conflicts.20.type: `algorithm` is not a valid enum value for path `type`., conflicts.22.type: `algorithm` is not a valid enum value for path `type`., conflicts.23.type: `algorithm` is not a valid enum value for path `type`., conflicts.24.type: `algorithm` is not a valid enum value for path `type`.\n    at Document.invalidate (D:\\Timetable\\server\\node_modules\\mongoose\\lib\\document.js:3381:32)\n    at Subdocument.invalidate (D:\\Timetable\\server\\node_modules\\mongoose\\lib\\types\\subdocument.js:257:12)\n    at D:\\Timetable\\server\\node_modules\\mongoose\\lib\\document.js:3142:17\n    at D:\\Timetable\\server\\node_modules\\mongoose\\lib\\schemaType.js:1446:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2026-04-10 14:31:23","url":"/api/timetable/generate"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 14:33:42"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 14:33:42"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 14:33:42"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 14:33:42"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 14:33:52"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 14:33:52"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 14:33:52"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 14:33:52"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 14:34:14"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 14:34:14"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 14:34:14"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 14:34:14"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 14:36:00"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 0","timestamp":"2026-04-10 14:36:01"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 0","timestamp":"2026-04-10 14:36:03"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 0","timestamp":"2026-04-10 14:36:03"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 0","timestamp":"2026-04-10 14:36:03"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 0","timestamp":"2026-04-10 14:36:03"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 0","timestamp":"2026-04-10 14:36:04"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 0","timestamp":"2026-04-10 14:36:04"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 0","timestamp":"2026-04-10 14:36:04"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 0","timestamp":"2026-04-10 14:36:04"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 0","timestamp":"2026-04-10 14:36:04"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 0","timestamp":"2026-04-10 14:36:05"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 0","timestamp":"2026-04-10 14:36:05"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 0","timestamp":"2026-04-10 14:36:05"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 0","timestamp":"2026-04-10 14:36:05"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 0","timestamp":"2026-04-10 14:36:05"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 0","timestamp":"2026-04-10 14:36:05"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 0","timestamp":"2026-04-10 14:36:05"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 0","timestamp":"2026-04-10 14:36:05"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 0","timestamp":"2026-04-10 14:36:06"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 0","timestamp":"2026-04-10 14:36:06"}
+{"level":"info","message":"Timetable generated: 69d8bd7eceab62fd6c286f8f | fitness: 0","timestamp":"2026-04-10 14:36:12"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 14:41:01"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 14:41:01"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 14:41:01"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 14:41:01"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 14:41:24"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 14:41:24"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 14:41:24"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 14:41:24"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 14:42:18"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 14:42:18"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 14:42:18"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 14:42:18"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 14:55:48"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 550","timestamp":"2026-04-10 14:55:48"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 700","timestamp":"2026-04-10 14:55:48"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 700","timestamp":"2026-04-10 14:55:49"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 700","timestamp":"2026-04-10 14:55:49"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 700","timestamp":"2026-04-10 14:55:49"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 700","timestamp":"2026-04-10 14:55:49"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 700","timestamp":"2026-04-10 14:55:49"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 700","timestamp":"2026-04-10 14:55:49"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 700","timestamp":"2026-04-10 14:55:49"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 700","timestamp":"2026-04-10 14:55:49"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 700","timestamp":"2026-04-10 14:55:49"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 700","timestamp":"2026-04-10 14:55:49"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 700","timestamp":"2026-04-10 14:55:49"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 700","timestamp":"2026-04-10 14:55:49"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 700","timestamp":"2026-04-10 14:55:49"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 700","timestamp":"2026-04-10 14:55:49"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 700","timestamp":"2026-04-10 14:55:49"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 700","timestamp":"2026-04-10 14:55:50"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 700","timestamp":"2026-04-10 14:55:50"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 700","timestamp":"2026-04-10 14:55:50"}
+{"level":"info","message":"Timetable generated: 69d8c21ec07572a411eb5973 | fitness: 700","timestamp":"2026-04-10 14:55:50"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 15:03:22"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 15:03:22"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 15:03:22"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 15:03:22"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 15:12:15"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 15:12:15"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 15:12:15"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 15:12:15"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 15:23:03"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 15:23:03"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 15:23:03"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 15:23:03"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-10 15:31:08"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 550","timestamp":"2026-04-10 15:31:08"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 700","timestamp":"2026-04-10 15:31:08"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 700","timestamp":"2026-04-10 15:31:08"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 700","timestamp":"2026-04-10 15:31:09"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 700","timestamp":"2026-04-10 15:31:09"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 700","timestamp":"2026-04-10 15:31:09"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 700","timestamp":"2026-04-10 15:31:09"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 700","timestamp":"2026-04-10 15:31:09"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 700","timestamp":"2026-04-10 15:31:09"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 700","timestamp":"2026-04-10 15:31:09"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 700","timestamp":"2026-04-10 15:31:09"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 700","timestamp":"2026-04-10 15:31:09"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 700","timestamp":"2026-04-10 15:31:09"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 700","timestamp":"2026-04-10 15:31:09"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 700","timestamp":"2026-04-10 15:31:09"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 700","timestamp":"2026-04-10 15:31:09"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 700","timestamp":"2026-04-10 15:31:09"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 700","timestamp":"2026-04-10 15:31:09"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 700","timestamp":"2026-04-10 15:31:09"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 700","timestamp":"2026-04-10 15:31:09"}
+{"level":"info","message":"Timetable generated: 69d8ca660eec0d93abd5d7b8 | fitness: 700","timestamp":"2026-04-10 15:31:10"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 15:38:58"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 15:38:58"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 15:38:58"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 15:38:58"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-10 15:39:10"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-10 15:39:10"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-10 15:39:10"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-10 15:39:10"}
+{"level":"info","message":"User logged in: admin@timetable.com","timestamp":"2026-04-10 16:10:12"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-11 01:43:38"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-11 01:43:38"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-11 01:43:38"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-11 01:43:38"}
+{"level":"info","message":"User logged in: admin@timetable.com","timestamp":"2026-04-11 01:46:03"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-11 01:47:26"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 700","timestamp":"2026-04-11 01:47:26"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 700","timestamp":"2026-04-11 01:47:26"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 700","timestamp":"2026-04-11 01:47:27"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 700","timestamp":"2026-04-11 01:47:27"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 700","timestamp":"2026-04-11 01:47:27"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 700","timestamp":"2026-04-11 01:47:27"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 700","timestamp":"2026-04-11 01:47:27"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 700","timestamp":"2026-04-11 01:47:27"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 700","timestamp":"2026-04-11 01:47:27"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 700","timestamp":"2026-04-11 01:47:27"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 700","timestamp":"2026-04-11 01:47:27"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 700","timestamp":"2026-04-11 01:47:27"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 700","timestamp":"2026-04-11 01:47:27"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 700","timestamp":"2026-04-11 01:47:27"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 700","timestamp":"2026-04-11 01:47:28"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 700","timestamp":"2026-04-11 01:47:28"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 700","timestamp":"2026-04-11 01:47:28"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 700","timestamp":"2026-04-11 01:47:28"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 700","timestamp":"2026-04-11 01:47:28"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 700","timestamp":"2026-04-11 01:47:28"}
+{"level":"info","message":"Timetable generated: 69d95ad8a8f179ed02ccd596 | fitness: 700","timestamp":"2026-04-11 01:47:28"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-11 01:49:29"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 550","timestamp":"2026-04-11 01:49:30"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 700","timestamp":"2026-04-11 01:49:33"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 700","timestamp":"2026-04-11 01:49:33"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 700","timestamp":"2026-04-11 01:49:33"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 700","timestamp":"2026-04-11 01:49:33"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 700","timestamp":"2026-04-11 01:49:33"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 700","timestamp":"2026-04-11 01:49:33"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 700","timestamp":"2026-04-11 01:49:33"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 700","timestamp":"2026-04-11 01:49:33"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 700","timestamp":"2026-04-11 01:49:33"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 700","timestamp":"2026-04-11 01:49:33"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 700","timestamp":"2026-04-11 01:49:33"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 700","timestamp":"2026-04-11 01:49:33"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 700","timestamp":"2026-04-11 01:49:33"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 700","timestamp":"2026-04-11 01:49:33"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 700","timestamp":"2026-04-11 01:49:33"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 700","timestamp":"2026-04-11 01:49:34"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 700","timestamp":"2026-04-11 01:49:34"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 700","timestamp":"2026-04-11 01:49:34"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 700","timestamp":"2026-04-11 01:49:34"}
+{"level":"info","message":"Timetable generated: 69d95b56a8f179ed02ccd60c | fitness: 700","timestamp":"2026-04-11 01:49:34"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-11 01:54:46"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 550","timestamp":"2026-04-11 01:54:46"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 700","timestamp":"2026-04-11 01:54:46"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 700","timestamp":"2026-04-11 01:54:46"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 700","timestamp":"2026-04-11 01:54:46"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 700","timestamp":"2026-04-11 01:54:46"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 700","timestamp":"2026-04-11 01:54:46"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 700","timestamp":"2026-04-11 01:54:46"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 700","timestamp":"2026-04-11 01:54:46"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 700","timestamp":"2026-04-11 01:54:46"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 700","timestamp":"2026-04-11 01:54:46"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 700","timestamp":"2026-04-11 01:54:46"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 700","timestamp":"2026-04-11 01:54:47"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 700","timestamp":"2026-04-11 01:54:47"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 700","timestamp":"2026-04-11 01:54:47"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 700","timestamp":"2026-04-11 01:54:47"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 700","timestamp":"2026-04-11 01:54:47"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 700","timestamp":"2026-04-11 01:54:47"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 700","timestamp":"2026-04-11 01:54:47"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 700","timestamp":"2026-04-11 01:54:47"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 700","timestamp":"2026-04-11 01:54:47"}
+{"level":"info","message":"Timetable generated: 69d95c8fa8f179ed02ccd63a | fitness: 700","timestamp":"2026-04-11 01:54:47"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-11 01:59:39"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-11 01:59:39"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-11 01:59:39"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-11 01:59:39"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-11 02:00:29"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 700","timestamp":"2026-04-11 02:00:29"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 700","timestamp":"2026-04-11 02:00:29"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 700","timestamp":"2026-04-11 02:00:29"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 700","timestamp":"2026-04-11 02:00:29"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 700","timestamp":"2026-04-11 02:00:29"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 700","timestamp":"2026-04-11 02:00:29"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 700","timestamp":"2026-04-11 02:00:29"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 700","timestamp":"2026-04-11 02:00:29"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 700","timestamp":"2026-04-11 02:00:29"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 700","timestamp":"2026-04-11 02:00:29"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 700","timestamp":"2026-04-11 02:00:29"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 700","timestamp":"2026-04-11 02:00:30"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 700","timestamp":"2026-04-11 02:00:30"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 700","timestamp":"2026-04-11 02:00:30"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 700","timestamp":"2026-04-11 02:00:30"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 700","timestamp":"2026-04-11 02:00:30"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 700","timestamp":"2026-04-11 02:00:30"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 700","timestamp":"2026-04-11 02:00:30"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 700","timestamp":"2026-04-11 02:00:30"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 700","timestamp":"2026-04-11 02:00:30"}
+{"ip":"::1","level":"error","message":"Timetable validation failed: conflicts.26.conflictType: `working_hours` is not a valid enum value for path `conflictType`., conflicts.27.conflictType: `working_hours` is not a valid enum value for path `conflictType`., conflicts.28.conflictType: `working_hours` is not a valid enum value for path `conflictType`., conflicts.29.conflictType: `working_hours` is not a valid enum value for path `conflictType`.","method":"POST","stack":"ValidationError: Timetable validation failed: conflicts.26.conflictType: `working_hours` is not a valid enum value for path `conflictType`., conflicts.27.conflictType: `working_hours` is not a valid enum value for path `conflictType`., conflicts.28.conflictType: `working_hours` is not a valid enum value for path `conflictType`., conflicts.29.conflictType: `working_hours` is not a valid enum value for path `conflictType`.\n    at Document.invalidate (D:\\Timetable\\server\\node_modules\\mongoose\\lib\\document.js:3381:32)\n    at Subdocument.invalidate (D:\\Timetable\\server\\node_modules\\mongoose\\lib\\types\\subdocument.js:257:12)\n    at D:\\Timetable\\server\\node_modules\\mongoose\\lib\\document.js:3142:17\n    at D:\\Timetable\\server\\node_modules\\mongoose\\lib\\schemaType.js:1446:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2026-04-11 02:00:30","url":"/api/timetable/generate"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-11 02:00:39"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 550","timestamp":"2026-04-11 02:00:39"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 700","timestamp":"2026-04-11 02:00:39"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 700","timestamp":"2026-04-11 02:00:39"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 700","timestamp":"2026-04-11 02:00:39"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 700","timestamp":"2026-04-11 02:00:39"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 700","timestamp":"2026-04-11 02:00:39"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 700","timestamp":"2026-04-11 02:00:39"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 700","timestamp":"2026-04-11 02:00:39"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 700","timestamp":"2026-04-11 02:00:40"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 700","timestamp":"2026-04-11 02:00:40"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 700","timestamp":"2026-04-11 02:00:40"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 700","timestamp":"2026-04-11 02:00:40"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 700","timestamp":"2026-04-11 02:00:40"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 700","timestamp":"2026-04-11 02:00:40"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 700","timestamp":"2026-04-11 02:00:40"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 700","timestamp":"2026-04-11 02:00:40"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 700","timestamp":"2026-04-11 02:00:40"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 700","timestamp":"2026-04-11 02:00:40"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 700","timestamp":"2026-04-11 02:00:40"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 700","timestamp":"2026-04-11 02:00:40"}
+{"ip":"::1","level":"error","message":"Timetable validation failed: conflicts.17.conflictType: `working_hours` is not a valid enum value for path `conflictType`., conflicts.18.conflictType: `working_hours` is not a valid enum value for path `conflictType`., conflicts.19.conflictType: `working_hours` is not a valid enum value for path `conflictType`., conflicts.20.conflictType: `working_hours` is not a valid enum value for path `conflictType`.","method":"POST","stack":"ValidationError: Timetable validation failed: conflicts.17.conflictType: `working_hours` is not a valid enum value for path `conflictType`., conflicts.18.conflictType: `working_hours` is not a valid enum value for path `conflictType`., conflicts.19.conflictType: `working_hours` is not a valid enum value for path `conflictType`., conflicts.20.conflictType: `working_hours` is not a valid enum value for path `conflictType`.\n    at Document.invalidate (D:\\Timetable\\server\\node_modules\\mongoose\\lib\\document.js:3381:32)\n    at Subdocument.invalidate (D:\\Timetable\\server\\node_modules\\mongoose\\lib\\types\\subdocument.js:257:12)\n    at D:\\Timetable\\server\\node_modules\\mongoose\\lib\\document.js:3142:17\n    at D:\\Timetable\\server\\node_modules\\mongoose\\lib\\schemaType.js:1446:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2026-04-11 02:00:40","url":"/api/timetable/generate"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-11 02:02:04"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-11 02:02:05"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-11 02:02:05"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-11 02:02:05"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-11 02:02:43"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 550","timestamp":"2026-04-11 02:02:43"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 700","timestamp":"2026-04-11 02:02:43"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 700","timestamp":"2026-04-11 02:02:43"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 700","timestamp":"2026-04-11 02:02:43"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 700","timestamp":"2026-04-11 02:02:43"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 700","timestamp":"2026-04-11 02:02:43"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 700","timestamp":"2026-04-11 02:02:43"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 700","timestamp":"2026-04-11 02:02:43"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 700","timestamp":"2026-04-11 02:02:43"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 700","timestamp":"2026-04-11 02:02:43"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 700","timestamp":"2026-04-11 02:02:43"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 700","timestamp":"2026-04-11 02:02:43"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 700","timestamp":"2026-04-11 02:02:44"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 700","timestamp":"2026-04-11 02:02:44"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 700","timestamp":"2026-04-11 02:02:44"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 700","timestamp":"2026-04-11 02:02:44"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 700","timestamp":"2026-04-11 02:02:44"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 700","timestamp":"2026-04-11 02:02:44"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 700","timestamp":"2026-04-11 02:02:44"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 700","timestamp":"2026-04-11 02:02:44"}
+{"level":"info","message":"Timetable generated: 69d95e6c99b7279340348d05 | fitness: 700","timestamp":"2026-04-11 02:02:44"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-11 02:07:09"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 700","timestamp":"2026-04-11 02:07:09"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 700","timestamp":"2026-04-11 02:07:10"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 700","timestamp":"2026-04-11 02:07:10"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 700","timestamp":"2026-04-11 02:07:10"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 700","timestamp":"2026-04-11 02:07:10"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 700","timestamp":"2026-04-11 02:07:10"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 700","timestamp":"2026-04-11 02:07:10"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 700","timestamp":"2026-04-11 02:07:10"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 700","timestamp":"2026-04-11 02:07:10"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 700","timestamp":"2026-04-11 02:07:10"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 700","timestamp":"2026-04-11 02:07:10"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 700","timestamp":"2026-04-11 02:07:10"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 700","timestamp":"2026-04-11 02:07:10"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 700","timestamp":"2026-04-11 02:07:10"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 700","timestamp":"2026-04-11 02:07:10"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 700","timestamp":"2026-04-11 02:07:10"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 700","timestamp":"2026-04-11 02:07:11"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 700","timestamp":"2026-04-11 02:07:11"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 700","timestamp":"2026-04-11 02:07:11"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 700","timestamp":"2026-04-11 02:07:11"}
+{"level":"info","message":"Timetable generated: 69d95f7799b7279340348d33 | fitness: 700","timestamp":"2026-04-11 02:07:11"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-11 02:10:53"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 700","timestamp":"2026-04-11 02:10:53"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 700","timestamp":"2026-04-11 02:10:53"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 700","timestamp":"2026-04-11 02:10:53"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 700","timestamp":"2026-04-11 02:10:53"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 700","timestamp":"2026-04-11 02:10:53"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 700","timestamp":"2026-04-11 02:10:53"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 700","timestamp":"2026-04-11 02:10:53"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 700","timestamp":"2026-04-11 02:10:54"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 700","timestamp":"2026-04-11 02:10:54"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 700","timestamp":"2026-04-11 02:10:54"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 700","timestamp":"2026-04-11 02:10:54"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 700","timestamp":"2026-04-11 02:10:54"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 700","timestamp":"2026-04-11 02:10:54"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 700","timestamp":"2026-04-11 02:10:54"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 700","timestamp":"2026-04-11 02:10:54"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 700","timestamp":"2026-04-11 02:10:54"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 700","timestamp":"2026-04-11 02:10:54"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 700","timestamp":"2026-04-11 02:10:54"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 700","timestamp":"2026-04-11 02:10:54"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 700","timestamp":"2026-04-11 02:10:54"}
+{"level":"info","message":"Timetable generated: 69d9605699b7279340348d6a | fitness: 700","timestamp":"2026-04-11 02:10:54"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-11 02:13:13"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-11 02:13:13"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-11 02:13:13"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-11 02:13:13"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-11 02:14:25"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 700","timestamp":"2026-04-11 02:14:25"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 700","timestamp":"2026-04-11 02:14:25"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 700","timestamp":"2026-04-11 02:14:25"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 700","timestamp":"2026-04-11 02:14:25"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 700","timestamp":"2026-04-11 02:14:25"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 700","timestamp":"2026-04-11 02:14:25"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 700","timestamp":"2026-04-11 02:14:25"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 700","timestamp":"2026-04-11 02:14:25"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 700","timestamp":"2026-04-11 02:14:25"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 700","timestamp":"2026-04-11 02:14:25"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 700","timestamp":"2026-04-11 02:14:26"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 700","timestamp":"2026-04-11 02:14:26"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 700","timestamp":"2026-04-11 02:14:26"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 700","timestamp":"2026-04-11 02:14:26"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 700","timestamp":"2026-04-11 02:14:26"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 700","timestamp":"2026-04-11 02:14:26"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 700","timestamp":"2026-04-11 02:14:26"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 700","timestamp":"2026-04-11 02:14:26"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 700","timestamp":"2026-04-11 02:14:26"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 700","timestamp":"2026-04-11 02:14:26"}
+{"level":"info","message":"Timetable generated: 69d9612a100c5d3eed6d5152 | fitness: 700","timestamp":"2026-04-11 02:14:26"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-11 02:15:42"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 550","timestamp":"2026-04-11 02:15:42"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 700","timestamp":"2026-04-11 02:15:42"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 700","timestamp":"2026-04-11 02:15:42"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 700","timestamp":"2026-04-11 02:15:42"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 700","timestamp":"2026-04-11 02:15:42"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 700","timestamp":"2026-04-11 02:15:42"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 700","timestamp":"2026-04-11 02:15:42"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 700","timestamp":"2026-04-11 02:15:42"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 700","timestamp":"2026-04-11 02:15:42"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 700","timestamp":"2026-04-11 02:15:42"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 700","timestamp":"2026-04-11 02:15:42"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 700","timestamp":"2026-04-11 02:15:42"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 700","timestamp":"2026-04-11 02:15:42"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 700","timestamp":"2026-04-11 02:15:42"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 700","timestamp":"2026-04-11 02:15:42"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 700","timestamp":"2026-04-11 02:15:42"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 700","timestamp":"2026-04-11 02:15:43"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 700","timestamp":"2026-04-11 02:15:43"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 700","timestamp":"2026-04-11 02:15:43"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 700","timestamp":"2026-04-11 02:15:43"}
+{"level":"info","message":"Timetable generated: 69d96177100c5d3eed6d5180 | fitness: 700","timestamp":"2026-04-11 02:15:43"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-11 02:20:41"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-11 02:20:41"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-11 02:20:41"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-11 02:20:41"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-11 02:21:47"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 700","timestamp":"2026-04-11 02:21:48"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 700","timestamp":"2026-04-11 02:21:48"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 700","timestamp":"2026-04-11 02:21:48"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 700","timestamp":"2026-04-11 02:21:48"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 700","timestamp":"2026-04-11 02:21:48"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 700","timestamp":"2026-04-11 02:21:48"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 700","timestamp":"2026-04-11 02:21:48"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 700","timestamp":"2026-04-11 02:21:48"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 700","timestamp":"2026-04-11 02:21:48"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 700","timestamp":"2026-04-11 02:21:48"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 700","timestamp":"2026-04-11 02:21:48"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 700","timestamp":"2026-04-11 02:21:48"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 700","timestamp":"2026-04-11 02:21:48"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 700","timestamp":"2026-04-11 02:21:49"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 700","timestamp":"2026-04-11 02:21:49"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 700","timestamp":"2026-04-11 02:21:49"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 700","timestamp":"2026-04-11 02:21:49"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 700","timestamp":"2026-04-11 02:21:49"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 700","timestamp":"2026-04-11 02:21:49"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 700","timestamp":"2026-04-11 02:21:49"}
+{"level":"info","message":"Timetable generated: 69d962e59f97ce60d66d738d | fitness: 700","timestamp":"2026-04-11 02:21:49"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-11 02:30:09"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-11 02:30:39"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-11 02:30:39"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-11 02:30:39"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-11 02:30:39"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-11 02:30:39"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-11 02:33:09"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 0","timestamp":"2026-04-11 02:33:09"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 0","timestamp":"2026-04-11 02:33:10"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 0","timestamp":"2026-04-11 02:33:10"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 0","timestamp":"2026-04-11 02:33:10"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 0","timestamp":"2026-04-11 02:33:10"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 0","timestamp":"2026-04-11 02:33:10"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 0","timestamp":"2026-04-11 02:33:10"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 0","timestamp":"2026-04-11 02:33:10"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 0","timestamp":"2026-04-11 02:33:10"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 0","timestamp":"2026-04-11 02:33:11"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 0","timestamp":"2026-04-11 02:33:11"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 0","timestamp":"2026-04-11 02:33:11"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 0","timestamp":"2026-04-11 02:33:11"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 0","timestamp":"2026-04-11 02:33:11"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 0","timestamp":"2026-04-11 02:33:11"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 0","timestamp":"2026-04-11 02:33:11"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 0","timestamp":"2026-04-11 02:33:11"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 0","timestamp":"2026-04-11 02:33:11"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 0","timestamp":"2026-04-11 02:33:11"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 0","timestamp":"2026-04-11 02:33:11"}
+{"level":"info","message":"Timetable generated: 69d9658f6444854a00c50541 | fitness: 0","timestamp":"2026-04-11 02:33:11"}
+{"ip":"::1","level":"error","message":"Cannot publish timetable with unresolved high-severity conflicts","method":"PUT","stack":"Error: Cannot publish timetable with unresolved high-severity conflicts\n    at TimetableSchema.methods.publish (D:\\Timetable\\server\\src\\models\\Timetable.model.js:79:11)\n    at exports.publish (D:\\Timetable\\server\\src\\controllers\\timetable.controller.js:72:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-04-11 02:39:29","url":"/api/timetable/69d9658f6444854a00c50541/publish"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-11 09:38:31"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-11 09:38:31"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-11 09:38:31"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-11 09:38:31"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-11 09:51:30"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 0","timestamp":"2026-04-11 09:51:30"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 0","timestamp":"2026-04-11 09:51:30"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 0","timestamp":"2026-04-11 09:51:30"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 0","timestamp":"2026-04-11 09:51:30"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 0","timestamp":"2026-04-11 09:51:30"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 0","timestamp":"2026-04-11 09:51:30"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 0","timestamp":"2026-04-11 09:51:30"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 0","timestamp":"2026-04-11 09:51:30"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 0","timestamp":"2026-04-11 09:51:30"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 0","timestamp":"2026-04-11 09:51:31"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 0","timestamp":"2026-04-11 09:51:31"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 0","timestamp":"2026-04-11 09:51:31"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 0","timestamp":"2026-04-11 09:51:31"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 0","timestamp":"2026-04-11 09:51:31"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 0","timestamp":"2026-04-11 09:51:31"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 0","timestamp":"2026-04-11 09:51:31"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 0","timestamp":"2026-04-11 09:51:31"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 0","timestamp":"2026-04-11 09:51:31"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 0","timestamp":"2026-04-11 09:51:31"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 0","timestamp":"2026-04-11 09:51:31"}
+{"level":"info","message":"Timetable generated: 69d9cc4b21af96477550a3bd | fitness: 0","timestamp":"2026-04-11 09:51:31"}
+{"level":"info","message":"Generating timetable for 1 classes using genetic","timestamp":"2026-04-11 10:16:58"}
+{"level":"info","message":"Algorithm progress: 1/200 | fitness: 0","timestamp":"2026-04-11 10:16:58"}
+{"level":"info","message":"Algorithm progress: 11/200 | fitness: 0","timestamp":"2026-04-11 10:16:59"}
+{"level":"info","message":"Algorithm progress: 21/200 | fitness: 0","timestamp":"2026-04-11 10:16:59"}
+{"level":"info","message":"Algorithm progress: 31/200 | fitness: 0","timestamp":"2026-04-11 10:16:59"}
+{"level":"info","message":"Algorithm progress: 41/200 | fitness: 0","timestamp":"2026-04-11 10:16:59"}
+{"level":"info","message":"Algorithm progress: 51/200 | fitness: 0","timestamp":"2026-04-11 10:16:59"}
+{"level":"info","message":"Algorithm progress: 61/200 | fitness: 0","timestamp":"2026-04-11 10:16:59"}
+{"level":"info","message":"Algorithm progress: 71/200 | fitness: 0","timestamp":"2026-04-11 10:16:59"}
+{"level":"info","message":"Algorithm progress: 81/200 | fitness: 0","timestamp":"2026-04-11 10:16:59"}
+{"level":"info","message":"Algorithm progress: 91/200 | fitness: 0","timestamp":"2026-04-11 10:16:59"}
+{"level":"info","message":"Algorithm progress: 101/200 | fitness: 0","timestamp":"2026-04-11 10:16:59"}
+{"level":"info","message":"Algorithm progress: 111/200 | fitness: 0","timestamp":"2026-04-11 10:16:59"}
+{"level":"info","message":"Algorithm progress: 121/200 | fitness: 0","timestamp":"2026-04-11 10:16:59"}
+{"level":"info","message":"Algorithm progress: 131/200 | fitness: 0","timestamp":"2026-04-11 10:16:59"}
+{"level":"info","message":"Algorithm progress: 141/200 | fitness: 0","timestamp":"2026-04-11 10:16:59"}
+{"level":"info","message":"Algorithm progress: 151/200 | fitness: 0","timestamp":"2026-04-11 10:16:59"}
+{"level":"info","message":"Algorithm progress: 161/200 | fitness: 0","timestamp":"2026-04-11 10:16:59"}
+{"level":"info","message":"Algorithm progress: 171/200 | fitness: 0","timestamp":"2026-04-11 10:16:59"}
+{"level":"info","message":"Algorithm progress: 181/200 | fitness: 0","timestamp":"2026-04-11 10:17:00"}
+{"level":"info","message":"Algorithm progress: 191/200 | fitness: 0","timestamp":"2026-04-11 10:17:00"}
+{"level":"info","message":"Timetable generated: 69d9d24421af96477550a41a | fitness: 0","timestamp":"2026-04-11 10:17:00"}
+{"ip":"::1","level":"error","message":"Cannot publish timetable with unresolved high-severity conflicts","method":"PUT","stack":"Error: Cannot publish timetable with unresolved high-severity conflicts\n    at TimetableSchema.methods.publish (D:\\Timetable\\server\\src\\models\\Timetable.model.js:79:11)\n    at exports.publish (D:\\Timetable\\server\\src\\controllers\\timetable.controller.js:72:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-04-11 10:18:45","url":"/api/timetable/69d9d24421af96477550a41a/publish"}
+{"level":"info","message":"✅ MongoDB Connected: localhost","timestamp":"2026-04-11 10:52:42"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-04-11 10:52:42"}
+{"level":"info","message":"📦 Environment: development","timestamp":"2026-04-11 10:52:42"}
+{"level":"info","message":"🗄️  MongoDB: mongodb://localhost:27017/timetable_db","timestamp":"2026-04-11 10:52:42"}

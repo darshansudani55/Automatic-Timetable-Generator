@@ -1,5 +1,18 @@
 const mongoose = require('mongoose');
 
+const ConflictSchema = new mongoose.Schema(
+  {
+    conflictType: {
+      type: String,
+      enum: ['faculty', 'lab', 'classroom', 'capacity', 'workload', 'algorithm', 'working_hours'],
+    },
+    severity: { type: String, enum: ['high', 'medium', 'low'] },
+    description: String,
+    resolved: { type: Boolean, default: false },
+  },
+  { _id: false }
+);
+
 const SlotSchema = new mongoose.Schema({
   slotNumber: { type: mongoose.Schema.Types.Mixed }, // number or 'BREAK'
   startTime: { type: String, required: true },
@@ -45,14 +58,7 @@ const TimetableSchema = new mongoose.Schema(
       maxFacultyHoursPerDay: { type: Number, default: 6 },
       labContinuousSlots: { type: Boolean, default: true },
     },
-    conflicts: [
-      {
-        type: { type: String, enum: ['faculty', 'lab', 'classroom', 'capacity', 'workload'] },
-        severity: { type: String, enum: ['high', 'medium', 'low'] },
-        description: String,
-        resolved: { type: Boolean, default: false },
-      },
-    ],
+    conflicts: [ConflictSchema],
     fitnessScore: { type: Number, min: 0 },
     algorithm: { type: String, enum: ['genetic', 'backtracking', 'hybrid'], default: 'genetic' },
     generatedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },

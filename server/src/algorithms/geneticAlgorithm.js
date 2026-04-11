@@ -98,67 +98,78 @@ class GeneticAlgorithmScheduler {
   calcFitness(individual) {
     let score = 1000;
     const maxFacHoursPerDay = this.constraints.maxFacultyHoursPerDay || 6;
-    const facHours = new Map();
+    const dayCapacityMins = (() => {
+      const start = this.workingHours.startTime.split(':').map(Number);
+      const end   = this.workingHours.endTime.split(':').map(Number);
+      const bkStart = this.workingHours.breakTime.start.split(':').map(Number);
+      const bkEnd   = this.workingHours.breakTime.end.split(':').map(Number);
+      const total = (end[0]*60+end[1]) - (start[0]*60+start[1]);
+      const breakMins = (bkEnd[0]*60+bkEnd[1]) - (bkStart[0]*60+bkStart[1]);
+      return total - breakMins; // usable minutes per day
+    })();
 
-    individual.forEach((a, i) => {
-      if (!a.startTime) { score -= 50; return; }
-      if (a.type === 'Theory' && !a.classroomId) score -= 50;
-      if (a.type === 'Lab' && !a.labId) score -= 50;
+    // Penalty: missing resources
+    for (const a of individual) {
+      if (a.type === 'Theory' && !a.classroomId) score -= 40;
+      if (a.type === 'Lab'    && !a.labId)       score -= 40;
+    }
 
-      const durationHours = (Number(a.endTime.split(':')[0]) + Number(a.endTime.split(':')[1])/60) - (Number(a.startTime.split(':')[0]) + Number(a.startTime.split(':')[1])/60);
+    // Group by classId+day and facultyId+day
+    const classDay  = {}; // classId → day → [sessions]
+    const facDay    = {}; // facultyId → day → totalMinutes
+
+    for (const a of individual) {
+      const cdKey = `${a.classId}::${a.day}`;
+      if (!classDay[cdKey]) classDay[cdKey] = [];
+      classDay[cdKey].push(a);
 
       if (a.facultyId) {
-        const fDayKey = `${a.facultyId}_${a.day}`;
-        const currentHours = facHours.get(fDayKey) || 0;
-        facHours.set(fDayKey, currentHours + durationHours);
-        if (currentHours + durationHours > maxFacHoursPerDay) score -= 80;
+        const fdKey = `${a.facultyId}::${a.day}`;
+        const dur = a.type === 'Lab' ? 90 : 60;
+        facDay[fdKey] = (facDay[fdKey] || 0) + dur;
       }
-
-      for (let j = 0; j < i; j++) {
-        const b = individual[j];
-        if (b.day !== a.day || !b.startTime) continue;
-        if (!slotsOverlap(a.startTime, a.endTime, b.startTime, b.endTime)) continue;
-
-        if (a.facultyId && a.facultyId === b.facultyId) score -= 100;
-        if (a.classId === b.classId) score -= 100;
-        if (a.classroomId && a.classroomId === b.classroomId) score -= 80;
-        if (a.labId && a.labId === b.labId) {
-          if (!a.labPart || !b.labPart || a.labPart === b.labPart) score -= 100;
-        }
-      }
-    });
-
-    // Enforce No Free Slots Hard Constraint
-    const classSchedules = {};
-    for (const a of individual) {
-        if (!a.startTime) continue;
-        if (!classSchedules[a.classId]) classSchedules[a.classId] = {};
-        if (!classSchedules[a.classId][a.day]) classSchedules[a.classId][a.day] = [];
-        classSchedules[a.classId][a.day].push(a);
     }
-    
-    Object.values(classSchedules).forEach(days => {
-       Object.values(days).forEach(slots => {
-          slots.sort((x, y) => Number(x.startTime.replace(':','')) - Number(y.startTime.replace(':','')));
-          
-          if (slots.length > 0 && slots[0].startTime !== this.workingHours.startTime) {
-              score -= 150;
-          }
 
-          for (let k = 0; k < slots.length - 1; k++) {
-              const gapStart = slots[k].endTime;
-              const gapEnd = slots[k+1].startTime;
-              
-              if (gapStart !== gapEnd) {
-                  if (gapStart === this.workingHours.breakTime.start && gapEnd === this.workingHours.breakTime.end) {
-                     // exact break transition, no penalty
-                  } else {
-                     score -= 150; 
-                  }
-              }
-          }
-       });
-    });
+    // Penalty: class has more sessions in a day than can fit
+    for (const [, sessions] of Object.entries(classDay)) {
+      const totalMins = sessions.reduce((s, a) => s + (a.type === 'Lab' ? 90 : 60), 0);
+      if (totalMins > dayCapacityMins) {
+        score -= (totalMins - dayCapacityMins) * 10; // Strictly penalise every minute of overflow
+      }
+    }
+
+    // Penalty: faculty exceeds max hours per day
+    for (const [, mins] of Object.entries(facDay)) {
+      const hours = mins / 60;
+      if (hours > maxFacHoursPerDay) score -= Math.floor(hours - maxFacHoursPerDay) * 80;
+    }
+
+    // Penalty: same faculty assigned to 2+ classes on same day (double booking)
+    // Build faculty → day → classes map
+    const facDayClasses = {};
+    for (const a of individual) {
+      if (!a.facultyId) continue;
+      const key = `${a.facultyId}::${a.day}`;
+      if (!facDayClasses[key]) facDayClasses[key] = new Set();
+      facDayClasses[key].add(a.classId);
+    }
+    for (const [, classSet] of Object.entries(facDayClasses)) {
+      if (classSet.size > 1) score -= (classSet.size - 1) * 100;
+    }
+
+    // Reward: balanced sessions spread across days
+    const classDayCount = {};
+    for (const a of individual) {
+      const key = `${a.classId}::${a.day}`;
+      classDayCount[key] = (classDayCount[key] || 0) + 1;
+    }
+    const allClassIds = [...new Set(individual.map(a => a.classId))];
+    for (const classId of allClassIds) {
+      const counts = this.workingDays.map(d => classDayCount[`${classId}::${d}`] || 0);
+      const avg = counts.reduce((s,c) => s+c, 0) / counts.length;
+      const variance = counts.reduce((s,c) => s + Math.pow(c - avg, 2), 0) / counts.length;
+      score -= Math.floor(variance) * 10; // penalise uneven spread
+    }
 
     return Math.max(0, score);
   }
@@ -193,15 +204,15 @@ class GeneticAlgorithmScheduler {
     const conflicts = [];
     for (let i = 0; i < genes.length; i++) {
       const a = genes[i];
-      if (!a.startTime) { conflicts.push({ type: 'algorithm', severity: 'high', description: `No slot found for ${a.subjectCode} (${a.className})`, resolved: false }); continue; }
+      if (!a.startTime) { conflicts.push({ conflictType: 'algorithm', severity: 'high', description: `No slot found for ${a.subjectCode} (${a.className})`, resolved: false }); continue; }
       
       for (let j = 0; j < i; j++) {
         const b = genes[j];
         if (b.day !== a.day || !b.startTime) continue;
         if (!slotsOverlap(a.startTime, a.endTime, b.startTime, b.endTime)) continue;
 
-        if (a.facultyId && a.facultyId === b.facultyId) conflicts.push({ type: 'faculty', severity: 'high', description: `Faculty ${a.facultyId} double booked on ${a.day} at ${a.startTime}`, resolved: false });
-        if (a.classId === b.classId) conflicts.push({ type: 'algorithm', severity: 'high', description: `Class ${a.className} double booked on ${a.day} at ${a.startTime}`, resolved: false });
+        if (a.facultyId && a.facultyId === b.facultyId) conflicts.push({ conflictType: 'faculty', severity: 'high', description: `Faculty ${a.facultyId} double booked on ${a.day} at ${a.startTime}`, resolved: false });
+        if (a.classId === b.classId) conflicts.push({ conflictType: 'algorithm', severity: 'high', description: `Class ${a.className} double booked on ${a.day} at ${a.startTime}`, resolved: false });
       }
     }
     return conflicts;
